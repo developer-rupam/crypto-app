@@ -1,0 +1,27 @@
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Header section -->
+
+<header id="responsive_mnu_add" class="header-section clearfix">
+		<div class="container-fluid">
+			<a routerLink="/" class="site-logo">
+				<img src="../../../assets/img/logo.png" alt="">
+			</a>
+			<div class="responsive-bar" (click)="isCollapsed = !isCollapsed"><i class="fa fa-bars"></i></div>
+			<a href="" class="user"><i class="fa fa-user"></i></a>
+            <a routerLink="/login" class="site-btn">Sign Up Free</a>
+           <!--  <a routerLink="/login" class="site-btn mr-2">Login</a> -->
+			<nav class="main-menu" [ngbCollapse]="isCollapsed">
+				<ul class="menu-list">
+                        <li><a routerLink="/">Solution</a></li>
+                        <li><a routerLink="/">Features</a></li>
+                        <li><a routerLink="/">News</a></li>
+                        <li><a routerLink="/about">About</a></li>
+                        <li><a routerLink="/">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
