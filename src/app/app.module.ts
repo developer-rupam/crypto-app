@@ -17,6 +17,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { LoaderComponent } from './utils/loader/loader.component';
 
 // Define routes here
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
     Helper,
     LoginComponent,
     SignupComponent,
+    LoaderComponent,
     
     
   ],

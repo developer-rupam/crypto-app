@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Helper } from '../../utils/helper';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,13 @@ import { Helper } from '../../utils/helper';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   public username : string;
   public password : string;
-  constructor(public helper:Helper) { }
+  public showLoader: boolean = false;
+
+
+  constructor(public helper:Helper, public router:Router) { }
 
   /*** function defination for Login ***/
   login(){
