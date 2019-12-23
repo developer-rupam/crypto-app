@@ -18,11 +18,17 @@ import { AboutComponent } from './pages/about/about.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoaderComponent } from './utils/loader/loader.component';
+import { NewsComponent } from './pages/news/news.component';
+import { TeamComponent } from './pages/team/team.component';
+import { FaqComponent } from './pages/faq/faq.component';
 
 // Define routes here
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
+  { path: "news", component: NewsComponent },
+  { path: "team", component: TeamComponent },
+  { path: "faq", component: FaqComponent },
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
   { path: "", component: HomeComponent },
@@ -40,6 +46,9 @@ const routes: Routes = [
     LoginComponent,
     SignupComponent,
     LoaderComponent,
+    NewsComponent,
+    TeamComponent,
+    FaqComponent,
     
     
   ],
