@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       //TODO: call login api here
       alert(this.username+'   '+this.password )
     }else{
-      this.helper.showAlert('Please Provide Valid Username & Password','error')
+      this.helper.showAlert('Please Provide Valid Email & Password','error')
     }
   }
   ngOnInit() {

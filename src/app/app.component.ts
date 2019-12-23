@@ -23,8 +23,8 @@ export class AppComponent {
           this.showHeader = true;
           this.showFooter = true;
         }else{
-          this.showHeader = false;
-          this.showFooter = false;
+          //this.showHeader = false;
+          //this.showFooter = false;
         }
       }
     });

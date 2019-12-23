@@ -1,1 +1,75 @@
-<p>signup works!</p>
+
+	<!-- Page info section -->
+	<section class="page-info-section">
+		<div class="container">
+			<h2>Signup</h2>
+			<div class="site-beradcamb">
+				<a href="">Home</a>
+				<span><i class="fa fa-angle-right"></i> Signup</span>
+			</div>
+		</div>
+	</section>
+	<!-- Page info end -->
+
+
+
+	<!-- Blog section -->
+	<section class="main-page spad">
+  
+	
+            <div class="form">
+      
+    
+      
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+          
+          <form (submit)="signup()" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off"  [(ngModel)]="firstName" name="firstName"/>
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off" [(ngModel)]="lastName" name="lastName"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off" [(ngModel)]="email" name="email"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" [(ngModel)]="password" name="password"/>
+          </div>
+          
+          <button type="submit" class="button button-block">Get Started</button>
+          
+          </form>
+
+        </div>
+        
+        
+        
+      
+</div> <!-- /form -->
+        
+        
+
+	</section>
+	<!-- Blog section end -->
+<app-loader [isLoading]="showLoader"></app-loader>
+
