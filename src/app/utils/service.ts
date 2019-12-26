@@ -18,10 +18,19 @@ import { Observable } from "rxjs";
         return response;
     }
 
+    
     /*** service function defination for add user ***/
     addUser = (firstname,lastname,email,password) => {
         const payload = JSON.stringify({'firstname':firstname,'lastname':lastname,'email':email,'password':password});
         const response = this.http.post<any>(WEBSERVICE + "/addUser.php", payload, this.serviceheaders);
+        return response;
+    }
+
+
+    /*** service function defination for user login ***/
+    login = (email,password) => {
+        const payload = JSON.stringify({'email':email,'password':password});
+        const response = this.http.post<any>(WEBSERVICE + "/login.php", payload, this.serviceheaders);
         return response;
     }
 
