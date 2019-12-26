@@ -3,16 +3,16 @@
 header("Access-Control-Allow-Origin: *");
 
 /** Production Server **/
-/* $servername = "docstopdb.czy3ehh6ckiv.us-east-2.rds.amazonaws.com";
-$username = "docstop_dba";
-$password = "dba12345";
-$db_name = "docstop_db"; */
+$servername = "localhost";
+$username = "id11886609_developer";
+$password = "Abcd@123";
+$db_name = "id11886609_crypto_database";
 
 /** Development Server **/
-  $servername = "localhost";
+ /*  $servername = "localhost";
   $username = "root";
   $password = "";
-  $db_name="crypto_database";
+  $db_name="crypto_database"; */
   
   header('Content-Type: text/html; charset=utf-8');
   $conn = mysqli_connect($servername, $username, $password)or die("Unable to connect to MySQL"); // Create connection
