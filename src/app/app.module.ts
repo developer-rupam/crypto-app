@@ -5,6 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { HttpClientModule } from "@angular/common/http";
 
 /***  Defining Helper Component ***/
 import { Helper } from "./utils/helper";
@@ -48,7 +49,7 @@ const routes: Routes = [
     LoaderComponent,
     NewsComponent,
     TeamComponent,
-    FaqComponent,
+    FaqComponent
     
     
   ],
@@ -59,7 +60,8 @@ const routes: Routes = [
     NgbModule,
     BrowserAnimationsModule,
     CarouselModule,
-    FormsModule 
+    FormsModule,
+    HttpClientModule 
 
   ],
   providers: [Helper],

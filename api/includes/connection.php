@@ -1,4 +1,7 @@
 <?php 
+
+header("Access-Control-Allow-Origin: *");
+
 /** Production Server **/
 /* $servername = "docstopdb.czy3ehh6ckiv.us-east-2.rds.amazonaws.com";
 $username = "docstop_dba";

@@ -46,7 +46,7 @@
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off" [(ngModel)]="email" name="email"/>
+            <input type="email"required autocomplete="off" [(ngModel)]="email" name="email" (blur)="checkEmailIfExist()"/>
           </div>
           
           <div class="field-wrap">
