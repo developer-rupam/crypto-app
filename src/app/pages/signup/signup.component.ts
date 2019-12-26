@@ -27,6 +27,18 @@ export class SignupComponent implements OnInit {
       this.email != undefined && this.email!='' &&
       this.password != undefined && this.password!='' 
     ){
+      this.showLoader = true;
+      this.service.addUser(this.firstName,this.lastName,this.email,this.password).subscribe(data=>{
+        if(data['error'].error_status){
+          this.helper.showAlert(data['error'].error_msg,'error');
+        }else{
+          this.helper.showAlert('Signup Successfull, Please Login to continue','success');
+          this.router.navigate(["/login"]);
+        }
+      },error=>{
+        this.showLoader = false;
+        this.helper.showAlert('Server Error','error');
+      })
 
     }else{
       this.helper.showAlert('Please Provide All Valid Details','error')
@@ -39,7 +51,6 @@ export class SignupComponent implements OnInit {
       this.showLoader = true;
       this.service.checkEmail(this.email).subscribe(data=>{
         this.showLoader = false;
-        console.log(data['error']);
         if(data['error'].error_status){
           this.helper.showAlert(data['error'].error_msg,'error');
           this.email = '';
@@ -55,6 +66,8 @@ export class SignupComponent implements OnInit {
     }
     
   }
+
+  
 
   ngOnInit() {
   }

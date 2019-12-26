@@ -11,9 +11,17 @@ import { Observable } from "rxjs";
 
     constructor(private http: HttpClient) {}
 
+    /*** service function defination for check email ***/
     checkEmail = (email) => {
         const payload = JSON.stringify({'email':email});
         const response = this.http.post<any>(WEBSERVICE + "/checkEmail.php", payload, this.serviceheaders);
+        return response;
+    }
+
+    /*** service function defination for add user ***/
+    addUser = (firstname,lastname,email,password) => {
+        const payload = JSON.stringify({'firstname':firstname,'lastname':lastname,'email':email,'password':password});
+        const response = this.http.post<any>(WEBSERVICE + "/addUser.php", payload, this.serviceheaders);
         return response;
     }
 
