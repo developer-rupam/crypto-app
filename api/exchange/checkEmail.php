@@ -26,11 +26,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" ){
 					$res=array();
 					
                         if(mysqli_num_rows($qur)>0){
-                            $error["error_status"]=0;
+                            $error["error_status"]=1;
                             $error["error_msg"]="Email Already Exist";
 						    $json = array("error" =>$error ,"user"=>$res );
                         }else{
-                            $error["error_status"]=1;
+                            $error["error_status"]=0;
                             $error["error_msg"]="Email Does not Exist";		
                             $json = array("error" =>$error ,"user"=>$res );
                         }

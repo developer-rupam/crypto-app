@@ -35,18 +35,25 @@ export class SignupComponent implements OnInit {
 
   /*** Function defination for checking email if exist ***/
   checkEmailIfExist = () => {
-    this.showLoader = true;
-    this.service.checkEmail(this.email).subscribe(data=>{
-      this.showLoader = false;
-      if(data.error.error_status){
-        this.helper.showAlert(data.error.error_msg,'error');
-      }else{
-        
-      }
-    },error=>{
-      this.showLoader = false;
-      this.helper.showAlert('Server Error','error');
-    });
+    if(this.email != '' && this.email != undefined){
+      this.showLoader = true;
+      this.service.checkEmail(this.email).subscribe(data=>{
+        this.showLoader = false;
+        console.log(data['error']);
+        if(data['error'].error_status){
+          this.helper.showAlert(data['error'].error_msg,'error');
+          this.email = '';
+        }else{
+          
+        }
+      },error=>{
+        this.showLoader = false;
+        this.helper.showAlert('Server Error','error');
+      });
+    }else{
+      this.helper.showAlert('Please Provide Valid Email','error');
+    }
+    
   }
 
   ngOnInit() {
