@@ -10,7 +10,7 @@ import { PROJECTNAMEALIAS } from '../../utils/init';
 })
 export class MainHeaderComponent implements OnInit {
 
-  public isCollapsed : boolean = false;
+  public isCollapsed : boolean = true;
 
   constructor(private router:Router,private helper:Helper) { 
     
