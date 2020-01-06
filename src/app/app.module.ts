@@ -22,6 +22,8 @@ import { LoaderComponent } from './utils/loader/loader.component';
 import { NewsComponent } from './pages/news/news.component';
 import { TeamComponent } from './pages/team/team.component';
 import { FaqComponent } from './pages/faq/faq.component';
+import { ExchangeFooterComponent } from './components/exchange-footer/exchange-footer.component';
+import { ExchangeHeaderSidebarComponent } from './components/exchange-header-sidebar/exchange-header-sidebar.component';
 
 // Define routes here
 const routes: Routes = [
@@ -49,7 +51,9 @@ const routes: Routes = [
     LoaderComponent,
     NewsComponent,
     TeamComponent,
-    FaqComponent
+    FaqComponent,
+    ExchangeFooterComponent,
+    ExchangeHeaderSidebarComponent,
     
     
   ],
