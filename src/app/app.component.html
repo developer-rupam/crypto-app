@@ -1,7 +1,10 @@
 <app-main-header *ngIf="showHeader"></app-main-header>
+<!-- <div id="wrapper" *ngIf="showExchangeHeaderSidebar"> -->
 <app-exchange-header-sidebar *ngIf="showExchangeHeaderSidebar"></app-exchange-header-sidebar>
 <div>
   <router-outlet></router-outlet>
 </div>
-<app-main-footer *ngIf="showFooter"></app-main-footer>
 <app-exchange-footer *ngIf="showExchangeFooter"></app-exchange-footer>
+<!-- </div> -->
+<app-main-footer *ngIf="showFooter"></app-main-footer>
+

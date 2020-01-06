@@ -23,8 +23,10 @@ export class AppComponent {
         localStorage.setItem(PROJECTNAMEALIAS+'_current_route',event.url);
         if(
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/login' &&
-          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/signup'
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/signup' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/dashboard'
         ){
+          
           this.showHeader = true;
           this.showFooter = true;
           this.showExchangeHeaderSidebar = false;

@@ -7,8 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExchangeHeaderSidebarComponent implements OnInit {
 
+  public isCollapsed : boolean = false;
+  
+
   constructor() { }
 
+  /*** function defination for collapse sidebar ***/
+  collapseSidebar = () => {
+    if(this.isCollapsed == true){
+      this.isCollapsed = false;
+     
+    }else{
+      this.isCollapsed = true;
+      
+    }
+  }
   ngOnInit() {
   }
 

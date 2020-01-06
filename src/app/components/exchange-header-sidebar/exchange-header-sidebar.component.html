@@ -1,6 +1,6 @@
-<!-- <div id="wrapper"> -->
+<div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+    <ul [ngClass]="isCollapsed ? 'navbar-nav sidebar sidebar-light accordion toggled' : 'navbar-nav sidebar sidebar-light accordion '" id="accordionSidebar" >
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <img src="../../../../assets/exchange/img/logo/logo2.png">
@@ -55,7 +55,7 @@
       <div id="content">
         <!-- TopBar -->
         <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
-          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+          <button id="sidebarToggleTop"  [attr.data-collapse]="isCollapsed" class="btn btn-link rounded-circle mr-3" (click)="collapseSidebar()">
             <i class="fa fa-bars"></i>
           </button>
           <ul class="navbar-nav ml-auto">
@@ -239,3 +239,6 @@
           </ul>
         </nav>
         <!-- Topbar -->
+   
+        
+        

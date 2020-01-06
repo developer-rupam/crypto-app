@@ -24,6 +24,7 @@ import { TeamComponent } from './pages/team/team.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { ExchangeFooterComponent } from './components/exchange-footer/exchange-footer.component';
 import { ExchangeHeaderSidebarComponent } from './components/exchange-header-sidebar/exchange-header-sidebar.component';
+import { DashboardComponent } from './pages/exchange/dashboard/dashboard.component';
 
 // Define routes here
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: "faq", component: FaqComponent },
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
+  { path: "dashboard", component: DashboardComponent },
   { path: "", component: HomeComponent },
 ];
 
@@ -54,6 +56,7 @@ const routes: Routes = [
     FaqComponent,
     ExchangeFooterComponent,
     ExchangeHeaderSidebarComponent,
+    DashboardComponent,
     
     
   ],
