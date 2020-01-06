@@ -34,8 +34,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem(PROJECTNAMEALIAS + '_user_lastname',user.last_name);
         localStorage.setItem(PROJECTNAMEALIAS + '_user_email',user.email);
         localStorage.setItem(PROJECTNAMEALIAS + '_user_status',user.status);
-        //TODO: redirect to dashboard page 
-         //this.router.navigate(["/login"]);
+        this.router.navigate(["/dashboard"]);
       }
      },error=>{
       this.showLoader = false;
