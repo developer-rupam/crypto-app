@@ -24,9 +24,12 @@ export class AppComponent {
         if(
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/login' &&
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/signup' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/purchase' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/withdraw' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/profile' &&
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/dashboard'
         ){
-          
+
           this.showHeader = true;
           this.showFooter = true;
           this.showExchangeHeaderSidebar = false;

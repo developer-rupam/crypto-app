@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Route } from "@angular/router";
+import { Helper } from "../../utils/helper";
+import { PROJECTNAMEALIAS } from '../../utils/init';
 
 @Component({
   selector: 'app-exchange-header-sidebar',
@@ -10,7 +13,7 @@ export class ExchangeHeaderSidebarComponent implements OnInit {
   public isCollapsed : boolean = false;
   
 
-  constructor() { }
+  constructor(private router:Router,private helper:Helper) { }
 
   /*** function defination for collapse sidebar ***/
   collapseSidebar = () => {
