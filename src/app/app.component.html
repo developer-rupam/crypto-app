@@ -1,10 +1,24 @@
+<div *ngIf="!loggedInStatus">
 <app-main-header *ngIf="showHeader"></app-main-header>
-<!-- <div id="wrapper" *ngIf="showExchangeHeaderSidebar"> -->
-<app-exchange-header-sidebar *ngIf="showExchangeHeaderSidebar"></app-exchange-header-sidebar>
 <div>
   <router-outlet></router-outlet>
 </div>
-<app-exchange-footer *ngIf="showExchangeFooter"></app-exchange-footer>
-<!-- </div> -->
 <app-main-footer *ngIf="showFooter"></app-main-footer>
+</div>
+
+
+<div *ngIf="loggedInStatus">
+    <app-exchange-sidebar *ngIf="showExchangeHeaderSidebar" [isCollapsed]="isExchangeSidebarCollapsed"></app-exchange-sidebar>
+    <div id="wrapper">
+        <div id="content-wrapper" class="d-flex flex-column">
+          <div id="content">
+            <app-exchange-header *ngIf="showExchangeHeaderSidebar" (isCollapsedButtonClicked)="isExchangeSidebarCollapsed=$event"></app-exchange-header>
+            <div>
+              <router-outlet></router-outlet>
+            </div>
+          </div>  
+          <app-exchange-footer *ngIf="showExchangeFooter"></app-exchange-footer>
+         </div>
+    </div>      
+</div>
 

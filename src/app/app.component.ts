@@ -13,6 +13,8 @@ export class AppComponent {
   public showExchangeHeaderSidebar:boolean = true;
   public showFooter:boolean = true;
   public showExchangeFooter:boolean = true;
+  public loggedInStatus:boolean = false;
+  public isExchangeSidebarCollapsed:boolean = false;
 
   constructor(private router: Router) { }
 
@@ -34,6 +36,7 @@ export class AppComponent {
           this.showFooter = true;
           this.showExchangeHeaderSidebar = false;
           this.showExchangeFooter = false;
+          this.loggedInStatus = false;
 
         }else if(
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') == '/login' ||
@@ -44,6 +47,7 @@ export class AppComponent {
           //this.showFooter = true;
           this.showExchangeHeaderSidebar = false;
           this.showExchangeFooter = false;
+          this.loggedInStatus = false;
 
         }else{
 
@@ -51,8 +55,17 @@ export class AppComponent {
           this.showFooter = false;
           this.showExchangeHeaderSidebar = true;
           this.showExchangeFooter = true;
+          this.loggedInStatus = true;
 
         }
+
+        /*** checking for login status ***/
+        /* if(localStorage.getItem(PROJECTNAMEALIAS + '_login_status') == '1'){
+          this.loggedInStatus = true;
+        }else{
+          this.loggedInStatus = false
+        } */
+        
         
       }
     });
