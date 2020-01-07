@@ -22,26 +22,26 @@
           </div>
                <div class="col-lg-6 col-sm-12">
               <div class="form-group">
-                <label for="exampleFormControlInput1">First Name</label>
-                <input type="name" class="form-control" id="exampleFormControlInput1">
+               <!--  <label for="exampleFormControlInput1">First Name</label> -->
+                <input type="name" class="form-control" [(ngModel)]="firstName" name="firstName" id="exampleFormControlInput1" placeholder="Enter First Name">
               </div>
                 </div>
                    <div class="col-lg-6 col-sm-12">
               <div class="form-group">
-                <label for="exampleFormControlInput1">Last Name</label>
-                <input type="name" class="form-control" id="exampleFormControlInput1">
+                <!-- <label for="exampleFormControlInput1">Last Name</label> -->
+                <input type="name" class="form-control" [(ngModel)]="lastName" name="lastName" id="exampleFormControlInput1" placeholder="Enter Last Name">
               </div>
                 </div>
                  <div class="col-lg-6 col-sm-12">
               <div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1">
+                <!-- <label for="exampleFormControlInput1">Email address</label> -->
+                <input type="email" class="form-control" [(ngModel)]="emailAddress" name="emailAddress" id="exampleFormControlInput1" placeholder="Enter Email Address">
               </div>
                 </div>
                   <div class="col-lg-6 col-sm-12">
               <div class="form-group">
-                <label for="exampleFormControlInput1">Phone</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
+                <!-- label for="exampleFormControlInput1">Phone</label> -->
+                <input type="text" class="form-control" [(ngModel)]="phone" name="phone" id="exampleFormControlInput1" placeholder="Enter Phone No">
               </div>
                 </div>
                  <div class="col-lg-6 col-sm-12">
@@ -50,8 +50,8 @@
                       <div class="col-md-4">
                       <div class="form-group">
                 
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>Day</option>
+                <select class="form-control" [(ngModel)]="dayOfDob" name="dayOfDob" id="exampleFormControlSelect1">
+                  <option value="">Day</option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -62,8 +62,8 @@
                      </div>
                       <div class="col-md-4">
                       <div class="form-group">
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Month</option>
+                <select class="form-control" [(ngModel)]="monthOfDob" name="monthOfDob" id="exampleFormControlSelect1">
+                    <option value="">Month</option>
                   <option>January</option>
                   <option>February</option>
                   <option>March</option>
@@ -81,8 +81,8 @@
                      </div>
                       <div class="col-md-4">
                       <div class="form-group">
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>Year</option>
+                <select class="form-control" [(ngModel)]="yearOfDob" name="yearOfDob" id="exampleFormControlSelect1">
+                  <option value="">Year</option>
                   <option>1950</option>
                   <option>1951</option>
                   <option>1952</option>
@@ -98,9 +98,9 @@
                      </div>
                   </div>   
                  <div class="col-lg-6 col-sm-12">
-                      <label for="exampleFormControlInput1">Country</label>
-                     <select class="form-control" id="exampleFormControlSelect1">
-                  <option>Select Country</option>
+                      <!-- <label for="exampleFormControlInput1">Country</label> -->
+                     <select class="form-control" [(ngModel)]="country" name="country" id="exampleFormControlSelect1">
+                  <option value="">Select Country</option>
                   <option>India</option>
                   <option>Us</option>
                   <option>Bangladesh</option>
@@ -109,9 +109,9 @@
                 </select>
                   </div>
                   <div class="col-lg-6 col-sm-12">
-                      <label for="exampleFormControlInput1">Citizenship</label>
-                     <select class="form-control" id="exampleFormControlSelect1">
-                  <option>Select Citizenship</option>
+                      <!-- <label for="exampleFormControlInput1">Citizenship</label> -->
+                     <select class="form-control" [(ngModel)]="citizenship" name="citizenship" id="exampleFormControlSelect1">
+                  <option value="">Select Citizenship</option>
                   <option>India</option>
                   <option>Us</option>
                   <option>Bangladesh</option>
@@ -120,9 +120,9 @@
                 </select>
                   </div>
              <div class="col-lg-6 col-sm-12">
-                      <label for="exampleFormControlInput1">Estimated Investment Amount</label>
-                     <select class="form-control" id="exampleFormControlSelect1">
-                  <option>Select Ammount</option>
+                      <!-- <label for="exampleFormControlInput1">Estimated Investment Amount</label> -->
+                     <select class="form-control" [(ngModel)]="fiatAmount" name="fiatAmount" id="exampleFormControlSelect1">
+                  <option value="">Select Amount</option>
                   <option>India</option>
                   <option>Us</option>
                   <option>Bangladesh</option>
@@ -131,7 +131,7 @@
                 </select>
                   </div>
             
-                  <button type="button" class="btn btn-primary mb-1 kpi"><i class="far fa-thumbs-up"></i> Save</button>
+                  <button type="button" class="btn btn-primary mb-1 kpi" (click)="saveProfileData()"><i class="far fa-thumbs-up"></i> Save</button>
               </div>
           </div>
         </div>
