@@ -18,3 +18,7 @@ export const ADDR = PRODUCTIONURL.siteUrl;
 }; */
 
 export const PROJECTNAMEALIAS = 'crypto';
+
+export const FIATPRICE = {'symbol':'USD','name':'US Dollar','price':0.00}
+
+export const DEFINEDCRYPTOARR = ['BTC','ETH','XRP'];

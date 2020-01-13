@@ -34,5 +34,12 @@ import { Observable } from "rxjs";
         return response;
     }
 
+    /*** service function defination for market capital value ***/
+    getMarketCap = (userId) => {
+        const payload = JSON.stringify({'user_id':userId});
+        const response = this.http.post<any>(WEBSERVICE + '/getMarketCap.php',payload,this.serviceheaders);
+        return response;
+    }
+
   
   }

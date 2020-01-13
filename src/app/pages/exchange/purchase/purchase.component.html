@@ -17,7 +17,7 @@
 
           <div class="card-body">
              <div class="row">
-                  <p>Current rates:   USD = £ 0.10,   BTC = £ 5,745.80,   ETH = £ 107.52</p>
+                  <p>Current rates:     <span *ngFor = "let list of definedCryptoPrice"><span>{{list.name}} = {{list.price | number:'3.1-5' }} {{fiatObj.symbol}} ,</span></span></p>
                  
                  <div class="col-md-4 offset-md-4 jp">
                       <div class="inpot">

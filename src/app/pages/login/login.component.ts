@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem(PROJECTNAMEALIAS + '_user_email',user.email);
         localStorage.setItem(PROJECTNAMEALIAS + '_user_status',user.status);
         localStorage.setItem(PROJECTNAMEALIAS + '_login_status','1');
+        this.getMarketCapValue();
         this.router.navigate(["/dashboard"]);
       }
      },error=>{
@@ -44,6 +45,22 @@ export class LoginComponent implements OnInit {
     }else{
       this.helper.showAlert('Please Provide Valid Email & Password','error')
     }
+  }
+
+
+  /*** function defination for get market capital ***/
+  getMarketCapValue = () =>{
+    this.service.getMarketCap(localStorage.getItem(PROJECTNAMEALIAS + '_user_id')).subscribe(data=>{
+      if(data['error'].error_status){
+        this.helper.showAlert(data['error'].error_msg,'error');
+      }else{
+        var res = data['data'];
+        localStorage.setItem(PROJECTNAMEALIAS + '_market_cap_json',JSON.stringify(res));
+      }
+    },error=>{
+      this.showLoader = false;
+      this.helper.showAlert('Server Error','error');
+    })
   }
   ngOnInit() {
   }

@@ -1,10 +1,7 @@
-
-
-
 <?php
 // Include database connection.php
 include_once('../includes/connection.php');
-header('Content-type: application/json');
+//header('Content-type: application/json');
 
 
 
