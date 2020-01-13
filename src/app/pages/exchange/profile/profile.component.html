@@ -52,11 +52,8 @@
                 
                 <select class="form-control" [(ngModel)]="dayOfDob" name="dayOfDob" id="exampleFormControlSelect1">
                   <option value="">Day</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                  <option *ngFor="let list of dayOfDobList" [value] = "list" >{{list}}</option>
+                 
                 </select>
               </div>
                      </div>
@@ -64,34 +61,26 @@
                       <div class="form-group">
                 <select class="form-control" [(ngModel)]="monthOfDob" name="monthOfDob" id="exampleFormControlSelect1">
                     <option value="">Month</option>
-                  <option>January</option>
-                  <option>February</option>
-                  <option>March</option>
-                  <option>April</option>
-                  <option>May</option>
-                    <option>June</option>
-                    <option>July</option>
-                    <option>Augest</option>
-                    <option>September</option>
-                    <option>October</option>
-                    <option>November</option>
-                    <option>December</option>
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">Augest</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
                 </select>
               </div>
                      </div>
                       <div class="col-md-4">
                       <div class="form-group">
-                <select class="form-control" [(ngModel)]="yearOfDob" name="yearOfDob" id="exampleFormControlSelect1">
+                <select class="form-control" [(ngModel)]="yearOfDob" name="yearOfDob" id="exampleFormControlSelect1" >
                   <option value="">Year</option>
-                  <option>1950</option>
-                  <option>1951</option>
-                  <option>1952</option>
-                  <option>1953</option>
-                  <option>1954</option>
-                  <option>1955</option>
-                  <option>1956</option>
-               
-                    
+                  <option *ngFor="let list of yearOfDobList" [value] = "list" >{{list}}</option>
                 </select>
               </div>
                          </div>
@@ -100,34 +89,25 @@
                  <div class="col-lg-6 col-sm-12">
                       <!-- <label for="exampleFormControlInput1">Country</label> -->
                      <select class="form-control" [(ngModel)]="country" name="country" id="exampleFormControlSelect1">
-                  <option value="">Select Country</option>
-                  <option>India</option>
-                  <option>Us</option>
-                  <option>Bangladesh</option>
-                  <option>Brazil</option>
-                  <option>Denmark</option>
+                  <option value="null">Select Country</option>
+                  <option *ngFor="let list of countryList" [value] = "list.alias" >{{list.name}}</option>
+                 
                 </select>
                   </div>
                   <div class="col-lg-6 col-sm-12">
                       <!-- <label for="exampleFormControlInput1">Citizenship</label> -->
                      <select class="form-control" [(ngModel)]="citizenship" name="citizenship" id="exampleFormControlSelect1">
-                  <option value="">Select Citizenship</option>
-                  <option>India</option>
-                  <option>Us</option>
-                  <option>Bangladesh</option>
-                  <option>Brazil</option>
-                  <option>Denmark</option>
+                  <option value="null">Select Citizenship</option>
+                  <option *ngFor="let list of countryList" [value] = "list.alias" >{{list.name}}</option>
+                  
                 </select>
                   </div>
              <div class="col-lg-6 col-sm-12">
                       <!-- <label for="exampleFormControlInput1">Estimated Investment Amount</label> -->
                      <select class="form-control" [(ngModel)]="fiatAmount" name="fiatAmount" id="exampleFormControlSelect1">
-                  <option value="">Select Amount</option>
-                  <option>India</option>
-                  <option>Us</option>
-                  <option>Bangladesh</option>
-                  <option>Brazil</option>
-                  <option>Denmark</option>
+                  <option value="null">Select Amount</option>
+                  <option *ngFor="let list of countryList" [value] = "list.alias" >{{list.currency}}</option>
+                  
                 </select>
                   </div>
             
@@ -143,3 +123,4 @@
 
 
   </div>
+  <app-loader [isLoading]="showLoader"></app-loader>

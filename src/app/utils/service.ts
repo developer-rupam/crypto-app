@@ -41,5 +41,20 @@ import { Observable } from "rxjs";
         return response;
     }
 
+    /*** service function defination for user details ***/
+    getUserDetails = (userId) => {
+        const payload = JSON.stringify({'user_id':userId});
+        const response = this.http.post<any>(WEBSERVICE + '/getUserDetails.php',payload,this.serviceheaders);
+        return response;
+    }
+
+     /*** service function defination for update user details ***/
+     updateUser = (userId,firstname,lastname,email,phone,dob,country,citizenship,investment_amount) => {
+        const payload = JSON.stringify({'user_id':userId,'firstname':firstname,'lastname':lastname,'email':email,'phone':phone,'date_of_birth':dob,'country':country,'citizenship':citizenship,'investment_amount':investment_amount});
+        const response = this.http.post<any>(WEBSERVICE + '/updateUser.php',payload,this.serviceheaders);
+        return response;
+    }
+
+
   
   }

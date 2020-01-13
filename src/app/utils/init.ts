@@ -22,3 +22,5 @@ export const PROJECTNAMEALIAS = 'crypto';
 export const FIATPRICE = {'symbol':'USD','name':'US Dollar','price':0.00}
 
 export const DEFINEDCRYPTOARR = ['BTC','ETH','XRP'];
+
+export const COUNTRYLIST = [{'name':'India','alias':'IN','currency':'INR'},{'name':'United State','alias':'US','currency':'USD'},{'name':'Bangladesh','alias':'BD','currency':'TK'},{'name':'Brazil','alias':'BR','currency':'BRL'},{'name':'Denmark','alias':'DN','currency':'KR'}]

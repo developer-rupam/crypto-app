@@ -13,7 +13,8 @@ export class PurchaseComponent implements OnInit {
 
   public definedCryptoPrice :any = [];
   public fiatObj : any = FIATPRICE;
-
+  public showLoader: boolean = false;
+  
   constructor(public helper:Helper, public router:Router,public service:Service) { }
   
   /*** function defination for getting all market cap price for defined crypto ***/
