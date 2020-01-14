@@ -24,10 +24,10 @@
                           <form >
                             <input type="text" class="text-primary"  placeholder="0.00" [(ngModel)]="userGivenAmount" name="userGivenAmount" (keyup)="getMarketRate()">
                             
-                            <span>Crypto</span>
+                            <span>{{selectedCrypto}}</span>
                           </form>
                           
-                          <p>(5,000 Crypto = £ 500 )</p>
+                          <p class="mt-5"></p>
                           
                       </div>
                  </div>

@@ -15,9 +15,9 @@ export class PurchaseComponent implements OnInit {
   public fiatObj : any = FIATPRICE;
   public showLoader : boolean = false;
   public userGivenAmount : number = 0.00;
-  public usdRate : string = ''; 
-  public btcRate : string = ''; 
-  public ethRate : string = ''; 
+  public usdRate : any = ''; 
+  public btcRate : any = ''; 
+  public ethRate : any = ''; 
   public selectedCrypto : string = 'BCH';
 
   constructor(public helper:Helper, public router:Router,public service:Service) { }
@@ -45,24 +45,29 @@ export class PurchaseComponent implements OnInit {
      
       if(marketCapArr[i].symbol == this.selectedCrypto){
           this.usdRate = (parseFloat(marketCapArr[i].quote.USD.price)*(this.userGivenAmount)).toFixed(2);
+          for(var j=0;j<marketCapArr.length;j++){
+
+            if(marketCapArr[j].symbol == 'BTC'){
+              console.log( '1/ ' + parseFloat(marketCapArr[j].quote.USD.price) + ' * ' + parseFloat(this.usdRate) + ' * ' + (this.userGivenAmount) )
+                this.btcRate =  (((1/parseFloat(marketCapArr[j].quote.USD.price))*parseFloat(this.usdRate))*(this.userGivenAmount)).toFixed(8);
+            }
+            if(marketCapArr[j].symbol == 'ETH'){
+              this.ethRate =  (((1/parseFloat(marketCapArr[j].quote.USD.price))*parseFloat(this.usdRate))*(this.userGivenAmount)).toFixed(6);
+            }
+
+          }  
       } 
-      if(marketCapArr[i].symbol == 'BTC'){
-        console.log( '1/ ' + parseFloat(marketCapArr[i].quote.USD.price) + ' * ' + parseFloat(this.usdRate) + ' * ' + (this.userGivenAmount) )
-          this.btcRate =  (((1/parseFloat(marketCapArr[i].quote.USD.price))*parseFloat(this.usdRate))*(this.userGivenAmount)).toFixed(6);
-      }
-      if(marketCapArr[i].symbol == 'ETH'){
-        this.ethRate =  (((1/parseFloat(marketCapArr[i].quote.USD.price))*parseFloat(this.usdRate))*(this.userGivenAmount)).toFixed(6);
-      }
+      
       console.log(this.btcRate)
     }
 
-    if(isNaN(this.userGivenAmount)){
+    if(isNaN(parseFloat(this.usdRate))){
       this.usdRate = '';
+    }else if(isNaN(parseFloat(this.btcRate))){
       this.btcRate = '';
+    }else if(isNaN(parseFloat(this.ethRate))){
       this.ethRate = '';
-    }        
-       
-
+    }
 
   }
 
