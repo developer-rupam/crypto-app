@@ -13,15 +13,20 @@ export class PurchaseComponent implements OnInit {
 
   public definedCryptoPrice :any = [];
   public fiatObj : any = FIATPRICE;
-  public showLoader: boolean = false;
-  
+  public showLoader : boolean = false;
+  public userGivenAmount : number = 0.00;
+  public usdRate : string = ''; 
+  public btcRate : string = ''; 
+  public ethRate : string = ''; 
+  public selectedCrypto : string = 'BCH';
+
   constructor(public helper:Helper, public router:Router,public service:Service) { }
   
   /*** function defination for getting all market cap price for defined crypto ***/
   getDefinedMarketPrice = (arr) =>{
     var marketCapArr = JSON.parse(localStorage.getItem( PROJECTNAMEALIAS +'_market_cap_json'));
     //console.log(marketCapArr);
-    
+    console.log('called')
     for(var i=0;i<marketCapArr.length;i++){
       if(marketCapArr[i].symbol == arr[i]){
         var obj = {'name':marketCapArr[i].name,'symbol':marketCapArr[i].symbol,'price':marketCapArr[i].quote.USD.price};
@@ -30,6 +35,35 @@ export class PurchaseComponent implements OnInit {
       }
     }
     console.log(this.definedCryptoPrice);
+  }
+
+  /*** function defination for getting market rate ***/
+  getMarketRate = () => {
+    var marketCapArr = JSON.parse(localStorage.getItem( PROJECTNAMEALIAS +'_market_cap_json'));
+
+    for(var i=0;i<marketCapArr.length;i++){
+     
+      if(marketCapArr[i].symbol == this.selectedCrypto){
+          this.usdRate = (parseFloat(marketCapArr[i].quote.USD.price)*(this.userGivenAmount)).toFixed(2);
+      } 
+      if(marketCapArr[i].symbol == 'BTC'){
+        console.log( '1/ ' + parseFloat(marketCapArr[i].quote.USD.price) + ' * ' + parseFloat(this.usdRate) + ' * ' + (this.userGivenAmount) )
+          this.btcRate =  (((1/parseFloat(marketCapArr[i].quote.USD.price))*parseFloat(this.usdRate))*(this.userGivenAmount)).toFixed(6);
+      }
+      if(marketCapArr[i].symbol == 'ETH'){
+        this.ethRate =  (((1/parseFloat(marketCapArr[i].quote.USD.price))*parseFloat(this.usdRate))*(this.userGivenAmount)).toFixed(6);
+      }
+      console.log(this.btcRate)
+    }
+
+    if(isNaN(this.userGivenAmount)){
+      this.usdRate = '';
+      this.btcRate = '';
+      this.ethRate = '';
+    }        
+       
+
+
   }
 
   ngOnInit() {

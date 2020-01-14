@@ -21,8 +21,8 @@
                  
                  <div class="col-md-4 offset-md-4 jp">
                       <div class="inpot">
-                          <form action="/action_page.php">
-                            <input type="number" name="quantity" min="1" max="500" placeholder="500">
+                          <form >
+                            <input type="text" class="text-primary"  placeholder="0.00" [(ngModel)]="userGivenAmount" name="userGivenAmount" (keyup)="getMarketRate()">
                             
                             <span>Crypto</span>
                           </form>
@@ -36,7 +36,7 @@
                  <div class="col-md-4 col-sm-12">
                   <div class="inpot1">
                           <form action="/action_page.php">
-                            <input type="number" name="quantity" min="1" max="500" placeholder="500">
+                            <input type="text" class="text-primary" placeholder="0.00" [(ngModel)]="usdRate" name="usdRate">
                             
                             <span>USD</span>
                           </form>
@@ -49,7 +49,7 @@
                     <div class="col-md-4 col-sm-12">
                   <div class="inpot1">
                           <form action="/action_page.php">
-                            <input type="number" name="quantity" min="1" max="500" placeholder="500">
+                            <input type="text" class="text-primary" placeholder="0.00" [(ngModel)]="btcRate" name="btcRate">
                             
                             <span>BTC</span>
                           </form>
@@ -60,7 +60,7 @@
                     <div class="col-md-4 col-sm-12">
                   <div class="inpot1">
                           <form action="/action_page.php">
-                            <input type="number" name="quantity" min="1" max="500" placeholder="500">
+                            <input type="text" class="text-primary" placeholder="0.00" [(ngModel)]="ethRate" name="ethRate">
                             
                             <span>ETH</span>
                           </form>
