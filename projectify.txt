@@ -1,0 +1,24 @@
+
+/*********************** Application Details ***********************************/
+Application setup has been initialed in "src/app/utils/init.ts" file
+
+
+/*********************** Database Details ***********************************/
+Database details are initalized in "api/includes/connection.php" file.
+Production server denotes the live credentials/details whereas developement denotes the dev/local server details 
+
+
+/*********************** Market Price Details ******************************/
+
+Getting market price value from  https://coinmarketcap.com/
+for logging in use following credentials
+
+Email : mails4rups@gmail.com
+Password : 9903480303@kolkata
+
+In the dashboard you will find the API key & documentaion link in sidebar.
+
+
+/*********************** Card/Bank Payment Details ********************************/
+
+/*********************** Crypto Payment Details ***********************************/
