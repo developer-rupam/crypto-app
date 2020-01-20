@@ -63,10 +63,18 @@ export class PurchaseComponent implements OnInit {
 
     if(isNaN(parseFloat(this.usdRate))){
       this.usdRate = '';
-    }else if(isNaN(parseFloat(this.btcRate))){
+    }
+     if(isNaN(parseFloat(this.btcRate))){
       this.btcRate = '';
-    }else if(isNaN(parseFloat(this.ethRate))){
+    }
+     if(isNaN(parseFloat(this.ethRate))){
       this.ethRate = '';
+    }
+     if(isNaN(this.userGivenAmount)){
+      console.log('here')
+      this.ethRate = '';
+      this.usdRate = '';
+      this.btcRate = '';
     }
 
   }
