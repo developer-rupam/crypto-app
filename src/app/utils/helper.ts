@@ -23,42 +23,7 @@ export class Helper {
     
   }
 
-  /*** function defination for showing ***/
-  /* showToastMessage(type: string, text: string): void {
-    type = type.toUpperCase();
-    if (type === "SUCCESS") {
-      this._snotifyService.success(`${text}`, {
-        showProgressBar: false,
-        timeout: 3000,
-        pauseOnHover: true,
-        position: SnotifyPosition.rightBottom
-      });
-    }
-    if (type === "ERROR") {
-      this._snotifyService.error(`${text}`, {
-        showProgressBar: false,
-        timeout: 3000,
-        pauseOnHover: true,
-        position: SnotifyPosition.rightBottom
-      });
-    }
-    if (type === "INFO") {
-      this._snotifyService.info(`${text}`, {
-        showProgressBar: false,
-        timeout: 3000,
-        pauseOnHover: true,
-        position: SnotifyPosition.rightBottom
-      });
-    }
-    if (type === "WARNING") {
-      this._snotifyService.warning(`${text}`, {
-        showProgressBar: false,
-        timeout: 3000,
-        pauseOnHover: true,
-        position: SnotifyPosition.rightBottom
-      });
-    }
-  }*/
+ 
 
   /*** function defination for confirm box ***/
 

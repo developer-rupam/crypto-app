@@ -31,14 +31,14 @@
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off" [(ngModel)]="username" name="username"/>
+            <input type="email"required autocomplete="off" [(ngModel)]="username" name="username" (keyup)="showHidePlaceholder($event)"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off" [(ngModel)]="password" name="password"/>
+            <input type="password"required autocomplete="off" [(ngModel)]="password" name="password" (keyup)="showHidePlaceholder($event)"/>
           </div>
           
           <p class="forgot"><a routerLink="/signup">New User?</a></p>

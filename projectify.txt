@@ -22,5 +22,15 @@ In the dashboard you will find the API key & documentaion link in sidebar.
 /*********************** Card/Bank Payment Details ********************************/
 
 /*********************** Crypto Payment Details ***********************************/
+
 Payment will be generated form coinbase , use following URL
 https://developers.coinbase.com/api/v2?shell#introduction
+
+Coin Base API Key Details : 
+
+API Key: aUQPXUL7xkLC6WoM
+API Secret: s8cnYlPlUR7DDvQL3WY8HNXH7bLuKkQl
+
+
+Blockchain info Receive documentation
+https://www.blockchain.com/api/api_receive

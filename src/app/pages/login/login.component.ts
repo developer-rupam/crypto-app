@@ -62,6 +62,17 @@ export class LoginComponent implements OnInit {
       this.helper.showAlert('Server Error','error');
     })
   }
+
+  /*** function defination for show hide placeholder ***/
+  showHidePlaceholder = (event : any) =>{
+    const value = event.target.value;
+    if(value==''){
+      event.target.previousSibling.style.display = 'block';
+    }else{
+      event.target.previousSibling.style.display = 'none';
+    }
+  }
+
   ngOnInit() {
   }
 

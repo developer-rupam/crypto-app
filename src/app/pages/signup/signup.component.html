@@ -31,14 +31,14 @@
               <label>
                 First Name<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off"  [(ngModel)]="firstName" name="firstName"/>
+              <input type="text" required autocomplete="off"  [(ngModel)]="firstName" name="firstName" (keyup)="showHidePlaceholder($event)"/>
             </div>
         
             <div class="field-wrap">
               <label>
                 Last Name<span class="req">*</span>
               </label>
-              <input type="text"required autocomplete="off" [(ngModel)]="lastName" name="lastName"/>
+              <input type="text"required autocomplete="off" [(ngModel)]="lastName" name="lastName" (keyup)="showHidePlaceholder($event)"/>
             </div>
           </div>
 
@@ -46,14 +46,14 @@
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off" [(ngModel)]="email" name="email" (blur)="checkEmailIfExist()"/>
+            <input type="email"required autocomplete="off" [(ngModel)]="email" name="email" (blur)="checkEmailIfExist()" (keyup)="showHidePlaceholder($event)"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off" [(ngModel)]="password" name="password"/>
+            <input type="password"required autocomplete="off" [(ngModel)]="password" name="password" (keyup)="showHidePlaceholder($event)"/>
           </div>
           
           <button type="submit" class="button button-block">Get Started</button>
