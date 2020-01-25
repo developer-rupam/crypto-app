@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2020 at 05:14 PM
+-- Generation Time: Jan 25, 2020 at 06:17 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -66,6 +66,14 @@ CREATE TABLE `purchase` (
   `status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `purchase`
+--
+
+INSERT INTO `purchase` (`txn_id`, `user_id`, `in_amount`, `out_amount`, `in_currency`, `out_currency`, `created`, `status`) VALUES
+(4, '2', '45.25', '2354.23659', 'USD', 'BTC', '2020-01-25 17:02:17', '8'),
+(5, '2', '6.17', '8.298', 'USD', 'ETH', '2020-01-25 17:08:07', '8');
+
 -- --------------------------------------------------------
 
 --
@@ -88,11 +96,24 @@ CREATE TABLE `transaction` (
   `txn_id` int(10) NOT NULL,
   `txn_no` varchar(255) DEFAULT NULL,
   `user_id` varchar(255) DEFAULT NULL,
+  `in_amount` varchar(255) DEFAULT NULL,
+  `out_amount` varchar(255) DEFAULT NULL,
+  `in_currency` varchar(255) DEFAULT NULL,
+  `out_currency` varchar(255) DEFAULT NULL,
   `txn_type` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
   `txn_type_id` varchar(255) DEFAULT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`txn_id`, `txn_no`, `user_id`, `in_amount`, `out_amount`, `in_currency`, `out_currency`, `txn_type`, `description`, `txn_type_id`, `created`, `status`) VALUES
+(2, 'PUR1579971737', '2', '45.25', '2354.23659', 'USD', 'BTC', '5', NULL, '4', '2020-01-25 17:02:17', '8'),
+(3, 'PUR1579972087', '2', '6.17', '8.298', 'USD', 'ETH', '5', '8.298ETH Purchased for 6.17USD', '5', '2020-01-25 17:08:07', '8');
 
 -- --------------------------------------------------------
 
@@ -173,7 +194,7 @@ ALTER TABLE `global_status`
 -- AUTO_INCREMENT for table `purchase`
 --
 ALTER TABLE `purchase`
-  MODIFY `txn_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `txn_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `social_links`
@@ -185,7 +206,7 @@ ALTER TABLE `social_links`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `txn_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `txn_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
