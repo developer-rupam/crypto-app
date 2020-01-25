@@ -21,6 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" ){
                 $outCurrency=$obj["out_currency"];
                 $txnNo = "PUR".time();
                 $status = 8; //Approved
+                $txnDesc = $outAmount ."". $outCurrency ." Purchased for ". $inAmount ."". $inCurrency;
             }
 	        // Get data
 			if(
@@ -38,14 +39,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST" ){
 					$last_id = $conn->insert_id;
 					$res=array();
 					
-                    /* $error["error_status"]=0;
-                    $res["user_id"]=$last_id;
-                    $json = array("error" =>$error ,"data"=>$res ); */
+                    
                     $sqlTxn = "INSERT INTO transaction SET";
                     $sqlTxn .= " in_amount='".mysqli_real_escape_string($conn,$inAmount)."', out_amount='".mysqli_real_escape_string($conn,$outAmount)."',";
                     $sqlTxn .= " user_id='".mysqli_real_escape_string($conn,$userId)."',out_currency='".mysqli_real_escape_string($conn,$outCurrency)."',";
                     $sqlTxn .= " in_currency='".mysqli_real_escape_string($conn,$inCurrency)."',txn_no='".$txnNo."',";
-                    $sqlTxn .= " txn_type_id='".$last_id."',txn_type='5',";
+                    $sqlTxn .= " txn_type_id='".$last_id."',txn_type='5',description='".mysqli_real_escape_string($conn,$txnDesc)."', ";
                     $sqlTxn .= " created=now(),status='".$status."' ";
 
                     if($qurTxn = mysqli_query($conn,$sqlTxn)){
