@@ -12,31 +12,52 @@
 
       <div class="col-lg-12">
 
+        <div class="card mb-4">
+          <div class="card-body">
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Txn No</th>
-                <th scope="col">Timestamp</th>
-                <th scope="col">Description</th>
-                <th scope="col">Credit</th>
-                <th scope="col">Debit</th>
-                <th scope="col">Status</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let item of transactionList">
-                <td>{{item.txn_no}}</td>
-                <td>{{item.created}}</td>
-                <td>{{item.description}}</td>
-                <td>{{item.out_amount}} {{item.out_currency}}</td>
-                <td>{{item.in_amount}} {{item.in_currency}}</td>
-                <td *ngIf="item.status==7" class="text-info"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Pending</td>
-                <td *ngIf="item.status==8" class="text-success"><i class="fa fa-check" aria-hidden="true"></i> Approved</td>
-                <td *ngIf="item.status==9" class="text-danger"><i class="fa fa-times" aria-hidden="true"></i> Declined</td>
-            </tr>
-            </tbody>
-        </table>
+          
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Txn No</th>
+                    <th scope="col">Timestamp</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Credit</th>
+                    <th scope="col">Debit</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of transactionList">
+                    <td>{{item.txn_no}}</td>
+                    <td>{{item.created}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.out_amount}} {{item.out_currency}}</td>
+                    <td>{{item.in_amount}} {{item.in_currency}}</td>
+                    <td *ngIf="item.status==7" class="text-info"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Pending</td>
+                    <td *ngIf="item.status==8" class="text-success"><i class="fa fa-check" aria-hidden="true"></i> Approved</td>
+                    <td *ngIf="item.status==9" class="text-danger"><i class="fa fa-times" aria-hidden="true"></i> Declined</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+      </div>
+
+        <nav aria-label="Page navigation example mb-4">
+            <ul class="pagination justify-content-end">
+              <li [ngClass]="pageNo==1 ? 'page-item disabled' : 'page-item'" >
+                <a class="page-link" href="javascript:void(0)" tabindex="-1">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0)">Next</a>
+              </li>
+            </ul>
+          </nav>
+
       </div>
     </div>   
     
