@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import Swal from 'sweetalert2'
+import { PROJECTNAMEALIAS } from "../utils/init"
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-helper",
@@ -9,7 +11,7 @@ import Swal from 'sweetalert2'
 export class Helper {
 
 
-  constructor() {}
+  constructor(public router:Router) {}
 
   /*** function defination for showing swal ***/
   showAlert(alertText:string,alertType:string,){
@@ -21,6 +23,20 @@ export class Helper {
       Swal.fire('Info',alertText,'info');
     }
     
+  }
+
+  /*** function defination for logout ***/
+  logout=()=>{
+    localStorage.removeItem(PROJECTNAMEALIAS + '_user_id');
+    localStorage.removeItem(PROJECTNAMEALIAS + '_user_status');
+    localStorage.removeItem(PROJECTNAMEALIAS + '_current_route');
+    localStorage.removeItem(PROJECTNAMEALIAS + '_market_cap_json');
+    localStorage.removeItem(PROJECTNAMEALIAS + '_login_status');
+    localStorage.removeItem(PROJECTNAMEALIAS + '_user_firstname');
+    localStorage.removeItem(PROJECTNAMEALIAS + '_user_email');
+    localStorage.removeItem(PROJECTNAMEALIAS + '_user_lastname');
+    this.router.navigate(["/login"]);
+
   }
 
  

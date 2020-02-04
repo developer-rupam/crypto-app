@@ -10,6 +10,7 @@ import { PROJECTNAMEALIAS } from '../../utils/init';
 })
 export class ExchangeHeaderComponent implements OnInit {
 
+  public loggedInUserName:string = localStorage.getItem(PROJECTNAMEALIAS + '_user_firstname') + ' ' + localStorage.getItem(PROJECTNAMEALIAS + '_user_lastname');
   public isCollapsed : boolean = false;
   @Output() public isCollapsedButtonClicked = new EventEmitter();
 
@@ -28,6 +29,9 @@ export class ExchangeHeaderComponent implements OnInit {
       
     }
   }
+
+  /***  function defination for logout functionality ***/
+  clickLogout = () => { this.helper.logout(); }
 
   ngOnInit() {
   }
