@@ -16,30 +16,24 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Txn No</th>
+                <th scope="col">Timestamp</th>
+                <th scope="col">Description</th>
+                <th scope="col">Credit</th>
+                <th scope="col">Debit</th>
+                <th scope="col">Status</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+            <tr *ngFor="let item of transactionList">
+                <td>{{item.txn_no}}</td>
+                <td>{{item.created}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.out_amount}} {{item.out_currency}}</td>
+                <td>{{item.in_amount}} {{item.in_currency}}</td>
+                <td *ngIf="item.status==7" class="text-info"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Pending</td>
+                <td *ngIf="item.status==8" class="text-success"><i class="fa fa-check" aria-hidden="true"></i> Approved</td>
+                <td *ngIf="item.status==9" class="text-danger"><i class="fa fa-times" aria-hidden="true"></i> Declined</td>
             </tr>
             </tbody>
         </table>
@@ -48,3 +42,4 @@
     
 </div>
 
+<app-loader [isLoading]="showLoader"></app-loader>

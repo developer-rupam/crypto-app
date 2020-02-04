@@ -55,6 +55,13 @@ import { Observable } from "rxjs";
         return response;
     }
 
+    /*** service function defination for get transaction details ***/
+    getTransactionList = (userId,pageNo,noOfItemsPerPage) => {
+        const payload = JSON.stringify({'user_id':userId,'page_no':pageNo,'no_of_items_per_page':noOfItemsPerPage});
+        const response = this.http.post<any>(WEBSERVICE + '/getTransactionHistory.php',payload,this.serviceheaders);
+        return response;
+    }
+
 
   
   }
