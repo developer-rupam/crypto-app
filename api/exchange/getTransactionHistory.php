@@ -25,38 +25,37 @@ if($_SERVER['REQUEST_METHOD'] == "POST" ){
                 $sql .=" user_id='".mysqli_real_escape_string($conn,$userId)."' LIMIT ".($pageNo-1).",".$noOfItemsPerPage;
 
                 $countSql = "SELECT COUNT(*) as total_count  FROM transaction WHERE user_id='".mysqli_real_escape_string($conn,$userId)."'";
-
-				if($qur = mysqli_query($conn,$sql))
-				{
-					$res=array();
-                        if(mysqli_num_rows($qur)>0){
-                           
-                            if($countQur = mysqli_query($conn,$countSql))
-				            {
-                                    $totalCount = mysqli_num_rows($qur);
-                                    while($res[]=mysqli_fetch_assoc($qur))
-                                    {
-                                        //print_r($res2);
-                                        $error["error_status"]=0;
-                                        $json = array("error" =>$error ,"transaction"=>$res,"total_count"=>$totalCount );
-                                    } 
-        
+                //echo $countSql;
+                if($countQur = mysqli_query($conn,$countSql))
+                {
+                    echo mysqli_num_rows($countQur);
+                    $totalCount = mysqli_num_rows($countQur);
+                    if($qur = mysqli_query($conn,$sql))
+                    {
+                        $res=array();
+                            if(mysqli_num_rows($qur)>0){
+                                while($res[]=mysqli_fetch_assoc($qur))
+                                {
+                                    //print_r($res2);
+                                    $error["error_status"]=0;
+                                    $json = array("error" =>$error ,"transaction"=>$res,"total_count"=>$totalCount );
+                                } 
                             }else{
-                                $error["error_msg"]=mysqli_error($conn);
-					            $json = array("error" =>$error);
+                                $error["error_status"]=1;
+                                $error["error_msg"]="No Data Exist";		
+                                $json = array("error" =>$error ,"user"=>$res );
                             }
                             
-                        }else{
-                            $error["error_status"]=1;
-                            $error["error_msg"]="No Data Exist";		
-                            $json = array("error" =>$error ,"user"=>$res );
-                        }
-						
-					
-				}else{
+                        
+                    }else{
+                        $error["error_msg"]=mysqli_error($conn);
+                        $json = array("error" =>$error);
+                    }
+                }else{
 					$error["error_msg"]=mysqli_error($conn);
 					$json = array("error" =>$error);
-				}
+				}    
+				
 			}
 			else{
 				$error["error_msg"]="all fields must be filled with values";

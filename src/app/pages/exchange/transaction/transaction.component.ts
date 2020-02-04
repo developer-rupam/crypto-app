@@ -12,9 +12,12 @@ import { PROJECTNAMEALIAS } from "../../../utils/init"
 export class TransactionComponent implements OnInit {
 
   public pageNo:number = 1;
-  public noOfItemsPerPage:number = 10;
+  public noOfItemsPerPage:number = 1;
   public transactionList:any = [];
   public showLoader:boolean = false;
+  public totalCount:number = 0;
+  public enablePrevBtn:boolean = false;
+  public enableNextBtn:boolean = false;
 
   constructor(public helper:Helper, public router:Router,public service:Service) { }
 
@@ -27,6 +30,20 @@ export class TransactionComponent implements OnInit {
         this.helper.showAlert(data['error'].error_msg,'error');
       }else{
        this.transactionList = data['transaction'];
+       this.totalCount = data['total_count'];
+
+       if(this.pageNo!=1){
+         this.enablePrevBtn = true;
+       }else{
+         this.enablePrevBtn = false;
+       }
+       alert(this.totalCount +'  '+ this.noOfItemsPerPage)
+       if(this.totalCount>this.noOfItemsPerPage){
+         this.enableNextBtn = true;
+       }else{
+         this.enableNextBtn = false;
+       }
+
       }
     },error=>{
       this.showLoader = false;
