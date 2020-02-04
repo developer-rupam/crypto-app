@@ -29,6 +29,7 @@ import { WithdrawComponent } from './pages/exchange/withdraw/withdraw.component'
 import { ProfileComponent } from './pages/exchange/profile/profile.component';
 import { ExchangeHeaderComponent } from './components/exchange-header/exchange-header.component';
 import { ExchangeSidebarComponent } from './components/exchange-sidebar/exchange-sidebar.component';
+import { TransactionComponent } from './pages/exchange/transaction/transaction.component';
 
 // Define routes here
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: "purchase", component: PurchaseComponent },
   { path: "withdraw", component: WithdrawComponent },
   { path: "profile", component: ProfileComponent },
+  { path: "transaction", component: TransactionComponent },
   { path: "", component: HomeComponent },
 ];
 
@@ -68,6 +70,7 @@ const routes: Routes = [
     ProfileComponent,
     ExchangeHeaderComponent,
     ExchangeSidebarComponent,
+    TransactionComponent,
     
     
   ],

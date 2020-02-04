@@ -29,7 +29,8 @@ export class AppComponent {
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/purchase' &&
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/withdraw' &&
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/profile' &&
-          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/dashboard'
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/dashboard' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/transaction' 
         ){
 
           this.showHeader = true;
