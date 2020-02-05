@@ -47,13 +47,13 @@
         <nav aria-label="Page navigation example mb-4">
             <ul class="pagination justify-content-end">
               <li [ngClass]="!enablePrevBtn ? 'page-item disabled' : 'page-item'" >
-                <a class="page-link" href="javascript:void(0)" tabindex="-1">Previous</a>
+                <a class="page-link" href="javascript:void(0)" tabindex="-1" (click)="paginate(pageNo-1)">Previous</a>
               </li>
-              <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
-              <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
-              <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+              <li *ngFor="let list of maxPageLimitArray ,let i = index" [ngClass]="pageNo == i+1 ? 'page-item active' : 'page-item'">
+                <a class="page-link" href="javascript:void(0)" (click)="paginate(i+1)">{{i+1}}</a>
+              </li>
               <li [ngClass]="!enableNextBtn ? 'page-item disabled' : 'page-item'">
-                <a class="page-link" href="javascript:void(0)">Next</a>
+                <a class="page-link" href="javascript:void(0)" (click)="paginate(pageNo+1)">Next</a>
               </li>
             </ul>
           </nav>

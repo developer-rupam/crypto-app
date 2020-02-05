@@ -28,8 +28,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" ){
                 //echo $countSql;
                 if($countQur = mysqli_query($conn,$countSql))
                 {
-                    echo mysqli_num_rows($countQur);
-                    $totalCount = mysqli_num_rows($countQur);
+                    //echo mysqli_num_rows($countQur);
+                    
+                    while($row = mysqli_fetch_assoc($countQur)){
+                        $totalCount = $row["total_count"];
+                    }
                     if($qur = mysqli_query($conn,$sql))
                     {
                         $res=array();

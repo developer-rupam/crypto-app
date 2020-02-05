@@ -18,6 +18,7 @@ export class TransactionComponent implements OnInit {
   public totalCount:number = 0;
   public enablePrevBtn:boolean = false;
   public enableNextBtn:boolean = false;
+  public maxPageLimitArray:any = [];
 
   constructor(public helper:Helper, public router:Router,public service:Service) { }
 
@@ -37,18 +38,32 @@ export class TransactionComponent implements OnInit {
        }else{
          this.enablePrevBtn = false;
        }
-       alert(this.totalCount +'  '+ this.noOfItemsPerPage)
-       if(this.totalCount>this.noOfItemsPerPage){
+
+       if(this.totalCount>this.noOfItemsPerPage && this.pageNo != this.totalCount){
          this.enableNextBtn = true;
        }else{
          this.enableNextBtn = false;
        }
+
+       var maxPageLimit = Math.ceil(this.totalCount/this.noOfItemsPerPage)
+       this.maxPageLimitArray = [];
+       console.log(maxPageLimit)
+       for(var i=1; i<=maxPageLimit;i++){
+         this.maxPageLimitArray.push(i)
+       }
+       console.log(this.maxPageLimitArray)
 
       }
     },error=>{
       this.showLoader = false;
       this.helper.showAlert('Server Error','error');
     })
+  }
+
+  /*** function defination for pagination ***/
+  paginate=(pageNo)=>{
+    this.pageNo = pageNo;
+    this.getTransactionList(this.pageNo,this.noOfItemsPerPage);
   }
 
   ngOnInit() {
