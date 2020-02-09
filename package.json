@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
+    "angular-font-awesome": "^3.1.2",
+    "font-awesome": "^4.7.0",
     "ngx-owl-carousel-o": "^2.0.1",
     "rxjs": "~6.4.0",
     "sweetalert2": "^9.4.3",

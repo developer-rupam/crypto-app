@@ -528,6 +528,7 @@ a:focus{
     font-size:.85rem;
     display:inline;
       transition: letter-spacing 0.5s;
+      margin: 0 0 0 20px;
 }
 h6.m-0.font-weight-bold {
     color: #000 !important;
@@ -753,9 +754,10 @@ background-color: #111a79;
         min-width:100vw
     }
     .sidebar.toggled{
-        width:100vw!important;
-        transition:all .3s ease-in-out;
-        -webkit-transition:all .3s ease-in-out
+        width: 40vw!important;
+        transition: all .3s ease-in-out;
+        -webkit-transition: .3s ease-in-out;
+         padding: 0 0 0 10px;
     }
     .sidebar.toggled .nav-item{
         margin-left:-1rem;
@@ -776,7 +778,8 @@ background-color: #111a79;
     }
     .sidebar.toggled .nav-item .nav-link span{
         font-size:.85rem;
-        display:inline
+        display:inline;
+        margin: 0 0 0 10px;
     }
     .sidebar.toggled .nav-item.active .nav-link{
         font-weight:700

@@ -928,12 +928,17 @@ a:focus {
     min-width: 100vw;
   }
 
-  .sidebar.toggled {
+  /* .sidebar.toggled {
     width: 100vw !important;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
+  } */
+  .sidebar.toggled {
+    width: 40vw!important;
+    transition: all .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+padding: 0 0 0 10px;
   }
-
   .sidebar.toggled .nav-item {
     margin-left: -1rem;
     position: relative;
@@ -957,6 +962,7 @@ a:focus {
   .sidebar.toggled .nav-item .nav-link span {
     font-size: 0.85rem;
     display: inline;
+    margin: 0 0 0 10px;
   }
 
   .sidebar.toggled .nav-item.active .nav-link {
