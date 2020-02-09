@@ -12,7 +12,7 @@ import { PROJECTNAMEALIAS } from "../../../utils/init"
 export class TransactionComponent implements OnInit {
 
   public pageNo:number = 1;
-  public noOfItemsPerPage:number = 1;
+  public noOfItemsPerPage:number = 10;
   public transactionList:any = [];
   public showLoader:boolean = false;
   public totalCount:number = 0;
