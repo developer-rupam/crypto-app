@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.14",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "angular-font-awesome": "^3.1.2",
+    "chart.js": "^2.9.3",
     "font-awesome": "^4.7.0",
     "ng-chartjs": "^0.1.2",
     "ngx-owl-carousel-o": "^2.0.1",

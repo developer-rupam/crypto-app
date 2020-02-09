@@ -44,8 +44,8 @@ export class AppComponent {
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') == '/signup'
         ){
 
-          //this.showHeader = true;
-          //this.showFooter = true;
+          this.showHeader = true;
+          this.showFooter = true;
           this.showExchangeHeaderSidebar = false;
           this.showExchangeFooter = false;
           this.loggedInStatus = false;

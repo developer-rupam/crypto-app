@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     if(localStorage.getItem(PROJECTNAMEALIAS + '_reload_page')=='true'){
       localStorage.removeItem(PROJECTNAMEALIAS + '_reload_page')
-      location.reload();
+      window.location.reload();
     }
   }
 

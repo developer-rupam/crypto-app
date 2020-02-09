@@ -24,7 +24,6 @@ export class MainHeaderComponent implements OnInit {
     }else{
       this.isUserLoggedIn=false;
     }
-    
   }
 
 
