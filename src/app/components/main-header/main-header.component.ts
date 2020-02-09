@@ -11,6 +11,7 @@ import { PROJECTNAMEALIAS } from '../../utils/init';
 export class MainHeaderComponent implements OnInit {
 
   public isCollapsed : boolean = true;
+  public isUserLoggedIn : boolean = false;
 
   constructor(private router:Router,private helper:Helper) { 
     
@@ -18,6 +19,13 @@ export class MainHeaderComponent implements OnInit {
 
   
   ngOnInit() {
+    if(localStorage.getItem(PROJECTNAMEALIAS+'_user_id') != undefined){
+      this.isUserLoggedIn=true;
+    }else{
+      this.isUserLoggedIn=false;
+    }
+    
   }
+
 
 }

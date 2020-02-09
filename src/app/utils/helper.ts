@@ -35,7 +35,8 @@ export class Helper {
     localStorage.removeItem(PROJECTNAMEALIAS + '_user_firstname');
     localStorage.removeItem(PROJECTNAMEALIAS + '_user_email');
     localStorage.removeItem(PROJECTNAMEALIAS + '_user_lastname');
-    this.router.navigate(["/login"]);
+   // this.router.navigate(["/login"]);
+   location.href="/login"
 
   }
 
