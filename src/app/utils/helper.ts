@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import Swal from 'sweetalert2'
-import { PROJECTNAMEALIAS } from "../utils/init"
+import { PROJECTNAMEALIAS,ADDR } from "../utils/init"
 import { Router } from "@angular/router";
 
 @Component({
@@ -35,8 +35,9 @@ export class Helper {
     localStorage.removeItem(PROJECTNAMEALIAS + '_user_firstname');
     localStorage.removeItem(PROJECTNAMEALIAS + '_user_email');
     localStorage.removeItem(PROJECTNAMEALIAS + '_user_lastname');
-   // this.router.navigate(["/login"]);
-   location.href="/login"
+    localStorage.setItem(PROJECTNAMEALIAS + '_reload_page','true');
+    this.router.navigate(["/login"]);
+   //location.href=ADDR + "/login"
 
   }
 

@@ -3,6 +3,7 @@ import { Helper } from '../../utils/helper';
 import { Router } from "@angular/router";
 import { Service } from "../../utils/service";
 import { PROJECTNAMEALIAS } from "../../utils/init"
+import { NgLocalization } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -74,6 +75,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(localStorage.getItem(PROJECTNAMEALIAS + '_reload_page')=='true'){
+      localStorage.removeItem(PROJECTNAMEALIAS + '_reload_page')
+      location.reload();
+    }
   }
 
 }
