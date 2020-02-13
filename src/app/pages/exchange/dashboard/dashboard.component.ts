@@ -8,10 +8,12 @@ import { Chart } from 'chart.js';
 })
 export class DashboardComponent implements OnInit,AfterViewInit {
 
+  public showLoader: boolean = false;
   constructor() { }
 
   /***  function defination for rendering chart ***/
    renderChart = () =>{
+    
     var ctx = document.getElementById("myAreaChart");
     var myLineChart = new Chart(ctx, {
       type: 'line',
@@ -103,11 +105,13 @@ export class DashboardComponent implements OnInit,AfterViewInit {
     console.log(myLineChart);
     }
   ngOnInit() {
-    /*** calling chart function to render ***/
-    this.renderChart();
+    /*** calling chart function to render after 2 sec ***/
+    setTimeout(()=>{    
+      this.renderChart();
+    }, 1000);
   }
   ngAfterViewInit() {
-    
+   
   }
 
 }
