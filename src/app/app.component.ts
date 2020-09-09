@@ -30,9 +30,13 @@ export class AppComponent {
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/withdraw' &&
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/profile' &&
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/dashboard' &&
-          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/transaction' 
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/transaction' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/admin/login' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/admin' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/admin/dashboard' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/admin/user-lists' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/admin/user-details' 
         ){
-
           this.showHeader = true;
           this.showFooter = true;
           this.showExchangeHeaderSidebar = false;
@@ -43,15 +47,19 @@ export class AppComponent {
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') == '/login' ||
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') == '/signup'
         ){
-
           this.showHeader = true;
           this.showFooter = true;
           this.showExchangeHeaderSidebar = false;
           this.showExchangeFooter = false;
           this.loggedInStatus = false;
 
+        }else if(localStorage.getItem(PROJECTNAMEALIAS+'_current_route').indexOf('admin') != -1 ){
+          this.showHeader = false;
+          this.showFooter = false;
+          this.showExchangeHeaderSidebar = false;
+          this.showExchangeFooter = false;
+          this.loggedInStatus = false;
         }else{
-
           this.showHeader = false;
           this.showFooter = false;
           this.showExchangeHeaderSidebar = true;

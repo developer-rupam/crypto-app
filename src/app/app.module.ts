@@ -53,6 +53,11 @@ const routes: Routes = [
   { path: "withdraw", component: WithdrawComponent },
   { path: "profile", component: ProfileComponent },
   { path: "transaction", component: TransactionComponent },
+  { path: "admin/login", component: AdminLoginComponent }, 
+  { path: "admin", component: AdminLoginComponent }, 
+  { path: "admin/dashboard", component: AdminDashboardComponent },
+  { path: "admin/user-lists", component: UserListsComponent },
+  { path: "admin/user-details", component: UserDetailsComponent },
   { path: "", component: HomeComponent },
 ];
 
