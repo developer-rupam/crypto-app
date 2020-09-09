@@ -31,6 +31,13 @@ import { ProfileComponent } from './pages/exchange/profile/profile.component';
 import { ExchangeHeaderComponent } from './components/exchange-header/exchange-header.component';
 import { ExchangeSidebarComponent } from './components/exchange-sidebar/exchange-sidebar.component';
 import { TransactionComponent } from './pages/exchange/transaction/transaction.component';
+import { AdminDashboardComponent } from './admin/pages/admin-dashboard/admin-dashboard.component';
+import { UserListsComponent } from './admin/pages/user-lists/user-lists.component';
+import { UserDetailsComponent } from './admin/pages/user-details/user-details.component';
+import { AdminHeaderComponent } from './admin/components/admin-header/admin-header.component';
+import { AdminSidebarComponent } from './admin/components/admin-sidebar/admin-sidebar.component';
+import { AdminFooterComponent } from './admin/components/admin-footer/admin-footer.component';
+import { AdminLoginComponent } from './admin/pages/admin-login/admin-login.component';
 
 // Define routes here
 const routes: Routes = [
@@ -72,6 +79,13 @@ const routes: Routes = [
     ExchangeHeaderComponent,
     ExchangeSidebarComponent,
     TransactionComponent,
+    AdminDashboardComponent,
+    UserListsComponent,
+    UserDetailsComponent,
+    AdminHeaderComponent,
+    AdminSidebarComponent,
+    AdminFooterComponent,
+    AdminLoginComponent,
     
     
   ],
