@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Router, Route } from "@angular/router";
+import { Helper } from "../../../utils/helper";
+import { PROJECTNAMEALIAS } from '../../../utils/init';
 
 @Component({
   selector: 'app-admin-header',
@@ -7,7 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHeaderComponent implements OnInit {
 
-  constructor() { }
+  public loggedInUserName:string = localStorage.getItem(PROJECTNAMEALIAS + '_user_firstname') + ' ' + localStorage.getItem(PROJECTNAMEALIAS + '_user_lastname');
+  public isCollapsed : boolean = false;
+  @Output() public isCollapsedButtonClicked = new EventEmitter();
+
+  constructor(private router:Router,private helper:Helper) { }
+
+  /*** function defination for collapse sidebar ***/
+  collapseSidebar = () => {
+    if(this.isCollapsed == true){
+      this.isCollapsed = false;
+      this.isCollapsedButtonClicked.emit(false);
+     
+    }else{
+      this.isCollapsed = true;
+      this.isCollapsedButtonClicked.emit(true);
+      
+    }
+  }
+
+  /***  function defination for logout functionality ***/
+  clickLogout = () => { this.helper.logout(); }
 
   ngOnInit() {
   }

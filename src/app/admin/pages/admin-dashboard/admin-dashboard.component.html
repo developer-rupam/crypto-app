@@ -1,1 +1,214 @@
-<p>admin-dashboard works!</p>
+<app-admin-sidebar [isCollapsed]="isExchangeSidebarCollapsed"></app-admin-sidebar>
+<div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column"> 
+      <div id="content">
+        <app-admin-header (isCollapsedButtonClicked)="isExchangeSidebarCollapsed=$event"></app-admin-header>
+        <div>
+          
+            <div class="container-fluid" >
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                  <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="./">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                  </ol>
+                </div>
+            
+                <div class="row mb-3">
+                  <!-- Earnings (Monthly) Card Example -->
+                  <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <div class="row align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Earnings (Monthly)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                            <div class="mt-2 mb-0 text-muted text-xs">
+                              <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                              <span>Since last month</span>
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fa fa-calendar fa-2x text-primary"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Earnings (Annual) Card Example -->
+                  <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Sales</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">650</div>
+                            <div class="mt-2 mb-0 text-muted text-xs">
+                              <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 12%</span>
+                              <span>Since last years</span>
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fa fa-shopping-cart fa-2x text-success"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- New User Card Example -->
+                  <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">New User</div>
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">366</div>
+                            <div class="mt-2 mb-0 text-muted text-xs">
+                              <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 20.4%</span>
+                              <span>Since last month</span>
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fa fa-users fa-2x text-info"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Pending Requests Card Example -->
+                  <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Pending Requests</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            <div class="mt-2 mb-0 text-muted text-xs">
+                              <span class="text-danger mr-2"><i class="fa fa-arrow-down"></i> 1.10%</span>
+                              <span>Since yesterday</span>
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fa fa-comments fa-2x text-warning"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            
+                    
+                    <div class="col-xl-12 col-lg-7">
+                        <div class="opi">
+                      <h3>Get 100 BRIKCOIN for 1 GBP</h3>
+                            
+                           <a routerLink="/purchase" class="btn btn-primary btn-icon-split btn-lg">
+                          <span class="icon text-white-50">
+                            <i class="fa fa-money"></i>
+                          </span>
+                          <span class="text">Buy Crypto</span>
+                        </a>
+                        </div>
+                    </div> 
+                  
+                    
+                    <!-- Invoice Example -->
+                  <div class="col-xl-12 col-lg-7 mb-4">
+                    <div class="card">
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Token Sale Pricing</h6>
+                      
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                          
+                          <tbody>
+                          
+                            <tr>
+                            <td>Start date</td>
+                              <td>22 Jun 2019 (01:00 UTC)</td>
+                            </tr>
+                            <tr>
+                              <td>End date</td>
+                              <td>31 Dec 2019 (23:59 UTC)</td>
+                            </tr>
+                            <tr>
+                       
+                              <td>Token sale hard cap</td>
+                              <td>5,330,000 GBP</td>
+                            </tr>
+                            <tr>
+                              <td>Token exchange rate</td>
+                              <td>1 BRIKCOIN = 0.01 GBP  /  1 GBP = 100 BRIKCOIN</td>
+                            </tr>
+                              <tr>
+                              <td>Accepted currencies</td>
+                              <td>GBP,   BTC,   ETH</td>
+                            </tr>
+                              <tr>
+                                  <td>Accepted currencies</td>
+                              <td>GBP,   BTC,   ETH</td>
+                              </tr>
+                              <tr>
+                                  <td>Min. transaction amount</td>
+                              <td>50 GBP,   0.0090 BTC,   0.52 ETH</td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="card-footer"></div>
+                    </div>
+                  </div>
+                  <!-- Message From Customer-->
+                    
+                    
+                    
+                    
+                  <!-- Area Chart -->
+                  <div class="col-xl-12 col-lg-7">
+                    <div class="card mb-4">
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold">Monthly Recap Report</h6>
+                        <div class="dropdown no-arrow">
+                          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">Dropdown Header:</div>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <div style="display: block;"><canvas id="myAreaChart"></canvas></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Pie Chart -->
+                 
+                  
+                
+                </div>
+                <!--Row-->
+            
+               
+            
+              </div>
+
+        </div>
+      </div>  
+      <app-exchange-footer *ngIf="showExchangeFooter"></app-exchange-footer>
+        </div>
+     </div>   
+
+
+
+  <app-loader [isLoading]="showLoader"></app-loader>
+
+
