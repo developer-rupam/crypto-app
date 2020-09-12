@@ -10,7 +10,7 @@ import { PROJECTNAMEALIAS } from '../../../utils/init';
 })
 export class AdminHeaderComponent implements OnInit {
 
-  public loggedInUserName:string = localStorage.getItem(PROJECTNAMEALIAS + '_user_firstname') + ' ' + localStorage.getItem(PROJECTNAMEALIAS + '_user_lastname');
+  public loggedInUserName:string = localStorage.getItem(PROJECTNAMEALIAS + '_admin_name');
   public isCollapsed : boolean = false;
   @Output() public isCollapsedButtonClicked = new EventEmitter();
 
@@ -30,7 +30,7 @@ export class AdminHeaderComponent implements OnInit {
   }
 
   /***  function defination for logout functionality ***/
-  clickLogout = () => { this.helper.logout(); }
+  clickLogout = () => { this.helper.adminLogout(); }
 
   ngOnInit() {
   }

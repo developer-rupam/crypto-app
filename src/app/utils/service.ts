@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { WEBSERVICE } from "../utils/init";
+import { WEBSERVICE,ADMINWEBSERVICE } from "../utils/init";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
@@ -59,6 +59,14 @@ import { Observable } from "rxjs";
     getTransactionList = (userId,pageNo,noOfItemsPerPage) => {
         const payload = JSON.stringify({'user_id':userId,'page_no':pageNo,'no_of_items_per_page':noOfItemsPerPage});
         const response = this.http.post<any>(WEBSERVICE + '/getTransactionHistory.php',payload,this.serviceheaders);
+        return response;
+    }
+
+    
+    /*** service function defination for admin login ***/
+    adminLogin = (email,password) => {
+        const payload = JSON.stringify({'email':email,'password':password});
+        const response = this.http.post<any>(ADMINWEBSERVICE + "/adminLogin.php", payload, this.serviceheaders);
         return response;
     }
 
