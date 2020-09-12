@@ -7,9 +7,9 @@ const DEVELOPMENTURL = {"siteUrl":"http://localhost:4200","apiEndPoint":"http://
 export const rangeMinValue = 0;
 export const rangeMaxValue = 500;
 
-export const WEBSERVICE = DEVELOPMENTURL.apiEndPoint;
-export const ADDR = DEVELOPMENTURL.siteUrl;
-export const ADMINWEBSERVICE = DEVELOPMENTURL.adminApiEndPoint;
+export const WEBSERVICE = PRODUCTIONURL.apiEndPoint;
+export const ADDR = PRODUCTIONURL.siteUrl;
+export const ADMINWEBSERVICE = PRODUCTIONURL.adminApiEndPoint;
 
 
 /* export const APPLICATION_TYPE_JSON = {

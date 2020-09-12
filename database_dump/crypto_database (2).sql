@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2020 at 06:17 PM
+-- Generation Time: Sep 12, 2020 at 07:59 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -21,6 +21,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `crypto_database`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `admin_id` int(10) NOT NULL,
+  `admin_name` varchar(255) DEFAULT NULL,
+  `admin_email` varchar(255) DEFAULT NULL,
+  `admin_phone` varchar(255) DEFAULT NULL,
+  `admin_password` varchar(255) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_phone`, `admin_password`, `created`, `updated`) VALUES
+(1, 'Super Admin', 'super.admin@domain.com', '9987452136', 'Abcd@123', '2020-09-09 14:26:11', NULL),
+(2, 'Admin', 'admin@domain.com', '9903478203', 'Abcd@123', '2020-09-09 14:26:11', NULL);
 
 -- --------------------------------------------------------
 
@@ -151,6 +175,12 @@ INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `date_of_birth`, `phon
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Indexes for table `global_status`
 --
 ALTER TABLE `global_status`
@@ -183,6 +213,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `global_status`

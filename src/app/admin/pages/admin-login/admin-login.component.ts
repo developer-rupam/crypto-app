@@ -44,6 +44,15 @@ export class AdminLoginComponent implements OnInit {
     }
   }
 
+  /*** function defination for show hide placeholder ***/
+  showHidePlaceholder = (event : any) =>{
+    const value = event.target.value;
+    if(value==''){
+      event.target.previousSibling.style.display = 'block';
+    }else{
+      event.target.previousSibling.style.display = 'none';
+    }
+  }
   ngOnInit() {
   }
 
