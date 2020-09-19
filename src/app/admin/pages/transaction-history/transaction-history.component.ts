@@ -5,35 +5,34 @@ import { Service } from "../../../utils/service";
 import { PROJECTNAMEALIAS } from "../../../utils/init"
 
 @Component({
-  selector: 'app-user-lists',
-  templateUrl: './user-lists.component.html',
-  styleUrls: ['./user-lists.component.css']
+  selector: 'app-transaction-history',
+  templateUrl: './transaction-history.component.html',
+  styleUrls: ['./transaction-history.component.css']
 })
-export class UserListsComponent implements OnInit {
+export class TransactionHistoryComponent implements OnInit {
 
   public pageNo:number = 1;
   public noOfItemsPerPage:number = 10;
-  public usersList:any = [];
+  public transactionList:any = [];
   public showLoader:boolean = false;
   public totalCount:number = 0;
   public enablePrevBtn:boolean = false;
   public enableNextBtn:boolean = false;
   public maxPageLimitArray:any = [];
 
-
-
   constructor(public helper:Helper, public router:Router,public service:Service) { }
 
 
-  /*** function defination for getting user list ***/
-  getAllUsersList=(pageNo,noOfItemsPerPage)=>{
+
+  /*** function defination for getting user transaction ***/
+  getTransactionList=(pageNo,noOfItemsPerPage)=>{
     this.showLoader = true;
-    this.service.getAllUsersForAdmin(this.pageNo,this.noOfItemsPerPage).subscribe(data=>{
+    this.service.getAllTransactionsForAdmin(this.pageNo,this.noOfItemsPerPage).subscribe(data=>{
       this.showLoader = false;
       if(data['error'].error_status){
         this.helper.showAlert(data['error'].error_msg,'error');
       }else{
-       this.usersList = data['user'];
+       this.transactionList = data['transaction'];
        this.totalCount = data['total_count'];
 
        if(this.pageNo!=1){
@@ -66,15 +65,16 @@ export class UserListsComponent implements OnInit {
   /*** function defination for pagination ***/
   paginate=(pageNo)=>{
     this.pageNo = pageNo;
-    this.getAllUsersList(this.pageNo,this.noOfItemsPerPage);
+    this.getTransactionList(this.pageNo,this.noOfItemsPerPage);
   }
+
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
     /***  calling function for getting transaction list ***/
-    this.getAllUsersList(this.pageNo,this.noOfItemsPerPage);
+    this.getTransactionList(this.pageNo,this.noOfItemsPerPage);
   }
 
 }

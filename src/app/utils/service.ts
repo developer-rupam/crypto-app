@@ -70,6 +70,19 @@ import { Observable } from "rxjs";
         return response;
     }
 
+    /*** service function defination for all user list for admin ***/
+    getAllUsersForAdmin = (pageNo,noOfItemsPerPage) => {
+        const payload = JSON.stringify({'page_no':pageNo,'no_of_items_per_page':noOfItemsPerPage});
+        const response = this.http.post<any>(ADMINWEBSERVICE + "/getAllUsers.php", payload, this.serviceheaders);
+        return response;
+    }
+
+    /*** service function defination for all transactions list for admin ***/
+    getAllTransactionsForAdmin = (pageNo,noOfItemsPerPage) => {
+        const payload = JSON.stringify({'page_no':pageNo,'no_of_items_per_page':noOfItemsPerPage});
+        const response = this.http.post<any>(ADMINWEBSERVICE + "/getAllTransactionHistory.php", payload, this.serviceheaders);
+        return response;
+    }
 
   
   }

@@ -8,10 +8,10 @@
         <div>
     <div class="container-fluid" id="container-wrapper">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="h3 mb-0 text-gray-800">All Users</h1>
+          <h1 class="h3 mb-0 text-gray-800">Transaction History</h1>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Users</li>
+            <li class="breadcrumb-item active" aria-current="page">Transactions</li>
           </ol>
         </div>
     
@@ -27,23 +27,24 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Country</th>
-                        <th scope="col">Status</th> 
-                        <th scope="col">Details</th> 
+                        <th scope="col">Txn No</th>
+                        <th scope="col">Timestamp</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Debit</th>
+                        <th scope="col">Status</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="let item of usersList">
-                        <td>{{item.first_name}} {{item.last_name}}</td>
-                        <td>{{item.email}}</td>
-                        <td>{{item.phone}}</td>
-                        <td>{{item.country}}</td>
-                        <td *ngIf="item.status==0" class="text-success"><i class="fa fa-check" aria-hidden="true"></i> Active</td>
-                        <td *ngIf="item.status==1" class="text-danger"><i class="fa fa-times" aria-hidden="true"></i> Inactive</td>
-                        <td><button type="button" class="btn btn-sm btn-info">View Details</button></td>
+                    <tr *ngFor="let item of transactionList">
+                        <td>{{item.txn_no}}</td>
+                        <td>{{item.created}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.out_amount}} {{item.out_currency}}</td>
+                        <td>{{item.in_amount}} {{item.in_currency}}</td>
+                        <td *ngIf="item.status==7" class="text-info"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Pending</td>
+                        <td *ngIf="item.status==8" class="text-success"><i class="fa fa-check" aria-hidden="true"></i> Approved</td>
+                        <td *ngIf="item.status==9" class="text-danger"><i class="fa fa-times" aria-hidden="true"></i> Declined</td>
                     </tr>
                     </tbody>
                 </table>
@@ -69,11 +70,12 @@
         </div>   
         
     </div>
+    
 </div>
 </div>  
 <app-exchange-footer></app-exchange-footer>
   </div>
-</div>   
+</div> 
 
 
 <app-loader [isLoading]="showLoader"></app-loader>

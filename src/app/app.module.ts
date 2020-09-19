@@ -38,6 +38,7 @@ import { AdminHeaderComponent } from './admin/components/admin-header/admin-head
 import { AdminSidebarComponent } from './admin/components/admin-sidebar/admin-sidebar.component';
 import { AdminFooterComponent } from './admin/components/admin-footer/admin-footer.component';
 import { AdminLoginComponent } from './admin/pages/admin-login/admin-login.component';
+import { TransactionHistoryComponent } from './admin/pages/transaction-history/transaction-history.component';
 
 // Define routes here
 const routes: Routes = [
@@ -58,6 +59,7 @@ const routes: Routes = [
   { path: "admin/dashboard", component: AdminDashboardComponent },
   { path: "admin/user-lists", component: UserListsComponent },
   { path: "admin/user-details", component: UserDetailsComponent },
+  { path: "admin/transactions", component: TransactionHistoryComponent },
   { path: "", component: HomeComponent },
 ];
 
@@ -91,6 +93,7 @@ const routes: Routes = [
     AdminSidebarComponent,
     AdminFooterComponent,
     AdminLoginComponent,
+    TransactionHistoryComponent,
     
     
   ],

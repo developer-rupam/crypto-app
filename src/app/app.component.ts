@@ -35,6 +35,7 @@ export class AppComponent {
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/admin' &&
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/admin/dashboard' &&
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/admin/user-lists' &&
+          localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/admin/transactions' &&
           localStorage.getItem(PROJECTNAMEALIAS+'_current_route') != '/admin/user-details' 
         ){
           this.showHeader = true;
