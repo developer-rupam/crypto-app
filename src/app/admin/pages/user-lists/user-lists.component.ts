@@ -19,6 +19,7 @@ export class UserListsComponent implements OnInit {
   public enablePrevBtn:boolean = false;
   public enableNextBtn:boolean = false;
   public maxPageLimitArray:any = [];
+  public isExchangeSidebarCollapsed:boolean = false;
 
 
 

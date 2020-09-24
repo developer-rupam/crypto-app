@@ -19,7 +19,8 @@ export class TransactionHistoryComponent implements OnInit {
   public enablePrevBtn:boolean = false;
   public enableNextBtn:boolean = false;
   public maxPageLimitArray:any = [];
-
+  public isExchangeSidebarCollapsed:boolean = false;
+  
   constructor(public helper:Helper, public router:Router,public service:Service) { }
 
 
