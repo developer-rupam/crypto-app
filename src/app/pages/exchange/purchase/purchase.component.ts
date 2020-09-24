@@ -18,21 +18,25 @@ export class PurchaseComponent implements OnInit {
   public usdRate : any = ''; 
   public btcRate : any = ''; 
   public ethRate : any = ''; 
-  public selectedCrypto : string = 'BCH';
+  public selectedCrypto : string = 'BTC';
 
   constructor(public helper:Helper, public router:Router,public service:Service) { }
   
   /*** function defination for getting all market cap price for defined crypto ***/
   getDefinedMarketPrice = (arr) =>{
     var marketCapArr = JSON.parse(localStorage.getItem( PROJECTNAMEALIAS +'_market_cap_json'));
-    //console.log(marketCapArr);
-    console.log('called')
+    console.log(marketCapArr);
+   // console.log('called')
     for(var i=0;i<marketCapArr.length;i++){
-      if(marketCapArr[i].symbol == arr[i]){
-        var obj = {'name':marketCapArr[i].name,'symbol':marketCapArr[i].symbol,'price':marketCapArr[i].quote.USD.price};
-        
-        this.definedCryptoPrice.push(obj)
-      }
+     for(let j=0;j<arr.length;j++){
+       console.log()
+       if(marketCapArr[i].symbol == arr[j] + 'USDT'){
+          var obj = {'name':arr[j],'symbol':arr[j],'price':marketCapArr[i].price};
+          
+          this.definedCryptoPrice.push(obj)
+       }
+     }
+      
     }
     console.log(this.definedCryptoPrice);
   }
@@ -42,23 +46,25 @@ export class PurchaseComponent implements OnInit {
     var marketCapArr = JSON.parse(localStorage.getItem( PROJECTNAMEALIAS +'_market_cap_json'));
 
     for(var i=0;i<marketCapArr.length;i++){
+     //console.log(marketCapArr[i].symbol,this.selectedCrypto)
      
-      if(marketCapArr[i].symbol == this.selectedCrypto){
-          this.usdRate = (parseFloat(marketCapArr[i].quote.USD.price)*(this.userGivenAmount)).toFixed(2);
-          for(var j=0;j<marketCapArr.length;j++){
-
-            if(marketCapArr[j].symbol == 'BTC'){
-              console.log( '1/ ' + parseFloat(marketCapArr[j].quote.USD.price) + ' * ' + parseFloat(this.usdRate) + ' * ' + (this.userGivenAmount) )
-                this.btcRate =  (((1/parseFloat(marketCapArr[j].quote.USD.price))*parseFloat(this.usdRate))*(this.userGivenAmount)).toFixed(8);
-            }
-            if(marketCapArr[j].symbol == 'ETH'){
-              this.ethRate =  (((1/parseFloat(marketCapArr[j].quote.USD.price))*parseFloat(this.usdRate))*(this.userGivenAmount)).toFixed(6);
-            }
-
-          }  
-      } 
+     if(marketCapArr[i].symbol == 'USDTBTC'){
+       console.log(console.log(marketCapArr[i].symbol,this.selectedCrypto))
+     }
       
-      console.log(this.btcRate)
+      if(marketCapArr[i].symbol == this.selectedCrypto + 'BTC' || marketCapArr[i].symbol == 'BTC' + this.selectedCrypto){
+        console.log(marketCapArr[i].symbol)
+        this.btcRate =  (((1/parseFloat(marketCapArr[i].price)))*(this.userGivenAmount)).toFixed(8);
+      }
+      if(marketCapArr[i].symbol == this.selectedCrypto + 'ETH' ||  marketCapArr[i].symbol ==  'ETH' + this.selectedCrypto ){
+        console.log(marketCapArr[i].symbol)
+        this.ethRate =  (((1/parseFloat(marketCapArr[i].price)))*(this.userGivenAmount)).toFixed(6);
+      }
+      if(marketCapArr[i].symbol == this.selectedCrypto + 'USDT'){
+        console.log(marketCapArr[i].symbol)
+        this.usdRate = (parseFloat(marketCapArr[i].price)*(this.userGivenAmount)).toFixed(2);
+      }
+
     }
 
     if(isNaN(parseFloat(this.usdRate))){

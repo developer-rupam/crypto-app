@@ -51,13 +51,14 @@ export class LoginComponent implements OnInit {
 
   /*** function defination for get market capital ***/
   getMarketCapValue = () =>{
-    this.service.getMarketCap(localStorage.getItem(PROJECTNAMEALIAS + '_user_id')).subscribe(data=>{
-      if(data['error'].error_status){
+    this.service.getMarketCap().subscribe(data=>{
+     /*  if(data['error'].error_status){
         this.helper.showAlert(data['error'].error_msg,'error');
-      }else{
-        var res = data['data'];
+      }else{ */
+        var res = data;
+
         localStorage.setItem(PROJECTNAMEALIAS + '_market_cap_json',JSON.stringify(res));
-      }
+      //}
     },error=>{
       this.showLoader = false;
       this.helper.showAlert('Server Error','error');

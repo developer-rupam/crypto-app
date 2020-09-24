@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { WEBSERVICE,ADMINWEBSERVICE } from "../utils/init";
+import { WEBSERVICE,ADMINWEBSERVICE,MARKETCAPENDPOINT } from "../utils/init";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
@@ -35,9 +35,9 @@ import { Observable } from "rxjs";
     }
 
     /*** service function defination for market capital value ***/
-    getMarketCap = (userId) => {
-        const payload = JSON.stringify({'user_id':userId});
-        const response = this.http.post<any>(WEBSERVICE + '/getMarketCap.php',payload,this.serviceheaders);
+    getMarketCap = () => {
+       
+        const response = this.http.get<any>(MARKETCAPENDPOINT + '/api/v3/ticker/price',this.serviceheaders);
         return response;
     }
 
