@@ -39,6 +39,8 @@ import { AdminSidebarComponent } from './admin/components/admin-sidebar/admin-si
 import { AdminFooterComponent } from './admin/components/admin-footer/admin-footer.component';
 import { AdminLoginComponent } from './admin/pages/admin-login/admin-login.component';
 import { TransactionHistoryComponent } from './admin/pages/transaction-history/transaction-history.component';
+import {ExchangeRouteGuard} from './utils/exchangeRouteGuard/exchange-route.guard'
+import {AdminRouteGuard} from  './utils/adminRouteGuard/admin-route.guard'
 
 // Define routes here
 const routes: Routes = [
@@ -49,17 +51,17 @@ const routes: Routes = [
   { path: "faq", component: FaqComponent },
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
-  { path: "dashboard", component: DashboardComponent },
-  { path: "purchase", component: PurchaseComponent },
-  { path: "withdraw", component: WithdrawComponent },
-  { path: "profile", component: ProfileComponent },
-  { path: "transaction", component: TransactionComponent },
+  { path: "dashboard", component: DashboardComponent ,canActivate:[ExchangeRouteGuard]},
+  { path: "purchase", component: PurchaseComponent ,canActivate:[ExchangeRouteGuard]},
+  { path: "withdraw", component: WithdrawComponent ,canActivate:[ExchangeRouteGuard]},
+  { path: "profile", component: ProfileComponent ,canActivate:[ExchangeRouteGuard]},
+  { path: "transaction", component: TransactionComponent ,canActivate:[ExchangeRouteGuard]},
   { path: "admin/login", component: AdminLoginComponent }, 
   { path: "admin", component: AdminLoginComponent }, 
-  { path: "admin/dashboard", component: AdminDashboardComponent },
-  { path: "admin/user-lists", component: UserListsComponent },
-  { path: "admin/user-details", component: UserDetailsComponent },
-  { path: "admin/transactions", component: TransactionHistoryComponent },
+  { path: "admin/dashboard", component: AdminDashboardComponent ,canActivate:[AdminRouteGuard]},
+  { path: "admin/user-lists", component: UserListsComponent ,canActivate:[AdminRouteGuard]},
+  { path: "admin/user-details", component: UserDetailsComponent ,canActivate:[AdminRouteGuard]},
+  { path: "admin/transactions", component: TransactionHistoryComponent,canActivate:[AdminRouteGuard] },
   { path: "", component: HomeComponent },
 ];
 
@@ -109,7 +111,7 @@ const routes: Routes = [
     AngularFontAwesomeModule 
 
   ],
-  providers: [Helper],
+  providers: [Helper,ExchangeRouteGuard,AdminRouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

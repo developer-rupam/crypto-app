@@ -42,7 +42,7 @@ export class Helper {
   }
   /*** function defination for admin logout ***/
   adminLogout=()=>{
-    localStorage.removeItem(PROJECTNAMEALIAS + 'admin_id');
+    localStorage.removeItem(PROJECTNAMEALIAS + '_admin_id');
     localStorage.removeItem(PROJECTNAMEALIAS + '_current_route');
     localStorage.removeItem(PROJECTNAMEALIAS + '_admin_name');
     localStorage.removeItem(PROJECTNAMEALIAS + '_admin_email');
