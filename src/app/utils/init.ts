@@ -12,17 +12,14 @@ export const ADDR = PRODUCTIONURL.siteUrl;
 export const ADMINWEBSERVICE = PRODUCTIONURL.adminApiEndPoint;
 
 
-/* export const APPLICATION_TYPE_JSON = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-  })
-}; */
 
+
+export const PROJECTNAME = 'Crypto-App';
 export const PROJECTNAMEALIAS = 'crypto';
 
 export const FIATPRICE = {'symbol':'USD','name':'US Dollar','price':0.00}
 
-export const DEFINEDCRYPTOARR = ['BTC','ETH','XRP'];
+export const DEFINEDCRYPTOARR = ['BTC','ETH'];
 
 export const COUNTRYLIST = [{'name':'India','alias':'IN','currency':'INR'},{'name':'United State','alias':'US','currency':'USD'},{'name':'Bangladesh','alias':'BD','currency':'TK'},{'name':'Brazil','alias':'BR','currency':'BRL'},{'name':'Denmark','alias':'DN','currency':'KR'}]
 

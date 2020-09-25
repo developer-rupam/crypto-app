@@ -18,7 +18,7 @@ export class PurchaseComponent implements OnInit {
   public usdRate : any = ''; 
   public btcRate : any = ''; 
   public ethRate : any = ''; 
-  public selectedCrypto : string = 'BTC';
+  public selectedCrypto : string = 'ETH';
 
   constructor(public helper:Helper, public router:Router,public service:Service) { }
   

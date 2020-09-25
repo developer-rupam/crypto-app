@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule,Title  } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from "@angular/router";
@@ -111,7 +111,7 @@ const routes: Routes = [
     AngularFontAwesomeModule 
 
   ],
-  providers: [Helper,ExchangeRouteGuard,AdminRouteGuard],
+  providers: [Helper,ExchangeRouteGuard,AdminRouteGuard,Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

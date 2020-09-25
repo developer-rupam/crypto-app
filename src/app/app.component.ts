@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from "@angular/router";
-import { PROJECTNAMEALIAS } from '../app/utils/init';
+import { PROJECTNAMEALIAS,PROJECTNAME } from '../app/utils/init';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { PROJECTNAMEALIAS } from '../app/utils/init';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'main-app';
+  title = PROJECTNAME;
   public showHeader:boolean = true;
   public showExchangeHeaderSidebar:boolean = true;
   public showFooter:boolean = true;
@@ -16,9 +17,14 @@ export class AppComponent {
   public loggedInStatus:boolean = false;
   public isExchangeSidebarCollapsed:boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private titleService: Title) { }
 
   ngOnInit() {
+
+    /*** SET PROJECT TITLE ****/
+    this.titleService.setTitle(PROJECTNAME);
+
+
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
        // console.log(event.url);
