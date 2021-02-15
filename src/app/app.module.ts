@@ -40,7 +40,8 @@ import { AdminFooterComponent } from './admin/components/admin-footer/admin-foot
 import { AdminLoginComponent } from './admin/pages/admin-login/admin-login.component';
 import { TransactionHistoryComponent } from './admin/pages/transaction-history/transaction-history.component';
 import {ExchangeRouteGuard} from './utils/exchangeRouteGuard/exchange-route.guard'
-import {AdminRouteGuard} from  './utils/adminRouteGuard/admin-route.guard'
+import {AdminRouteGuard} from  './utils/adminRouteGuard/admin-route.guard';
+import { LiveTickerComponent } from './pages/live-ticker/live-ticker.component'
 
 // Define routes here
 const routes: Routes = [
@@ -96,6 +97,7 @@ const routes: Routes = [
     AdminFooterComponent,
     AdminLoginComponent,
     TransactionHistoryComponent,
+    LiveTickerComponent,
     
     
   ],
